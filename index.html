@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        function openModal ( el )
+        {
+            $( 'body' ).append( el );
+        }
+        $( document ).ready( () => {
+            $( '#zaselenie' ).on( {
+                click: () => {
+                    let form_wrapper = $( '<div>', {
+                        class: 'form-wrapper'
+                    } );
+                    let form = $( `<form action="#" method="post" target="_blank">
+                                        <h2>Шаблон формы</h2>
+                                        <fieldset>
+                                            <legend>Персональные данные</legend>
+                                                <label for="name">Имя:*</label>
+                                                <input type="text" name="name" placeholder="Иван Иванов" id="name" required>
+
+                                                <label for="age">Возраст:</label>
+                                                <input type="number" name="age" placeholder="27" id="age" min="0" max="125">
+
+                                                <label for="facultet">Факультет</label>
+                                                <input type="text" name="facultet" id="facultet" placeholder="ИСТб-22-1">
+
+                                                <input type="file" name="passport" id="passport">
+                                                <label for="passport">Скан пасспорта</label>
+
+                                                <input type="file" name="flurogr" id="flurogr">
+                                                <label for="flurogr">Флюрография</label>
+                                        </fieldset>
+                                        <div>
+                                            <button type="submit">Отправить</button>
+                                            <p>* — Обязательные поля</p>
+                                        </div>
+                                   </form>` 
+                    ).appendTo( form_wrapper );
+                    openModal( form_wrapper );
+                }
+            } )
+        } )
+    </script>
+    <style>
+        :root {
+            --bg-color: #caf0f8;
+            --bg2-color: #8cc3f2;
+            --fg-color: #0096c7;
+            --act-color: #2fb8e5;
+            --dark-text-color: rgb(20, 20, 20);
+            --small-gap: 10px;
+        }
+        body {
+            margin: 0;
+        }
+        .head {
+            position: relative;
+            padding: 20px;
+            background-color: var(--bg-color);
+            border-radius: 0 0 15px 15px;
+        }
+        .head h1 {
+            display: inline;
+            font-size: 26px;
+            color: var(--fg-color);
+            margin-bottom: 8px;
+        }
+        .head p {
+            font-size: 16px;
+            color: var(--dark-text-color);
+        }
+        /* .row-2 {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: var(--small-gap);
+            margin: var(--small-gap);
+        } */
+        .dormitory-activities {
+            margin: var(--small-gap);
+            padding: var(--small-gap);
+            font-size: 16px;
+            border-radius: 15px;
+            background-color: var(--bg-color);
+            color: var(--dark-text-color);
+        }
+        .dormitory-activities button {
+            max-width: 300px;
+            height: 80px;
+            padding: 15px;
+            font-size: 16px;
+            color: var(--dark-text-color);
+            background-color: var(--act-color);
+            border-radius: 15px;
+            border: none;
+        }
+        .news-list-row {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: var(--small-gap);
+            color: var(--dark-text-color);
+            margin: var(--small-gap);
+        }
+        .news {
+            flex-grow: 1;
+            background-color: var(--bg2-color);
+            position: relative;
+            padding: var(--small-gap);
+            border-radius: 15px;
+        }
+        .news img {
+            max-width: 50%;
+            object-fit: contain;
+            float: left;
+            margin: 0 10px 10px 0;
+        }
+        .news p {
+            clear: both;
+        }
+        .outside-activities {
+            display: flex;
+            gap: var(--small-gap);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .outside-activities article {
+            max-width: 500px;
+        }
+        .outside-activities article img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <header class="head">
+        <h1>
+            Заселение без смс и регистрации
+        </h1>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet dolor quibusdam laboriosam, iusto nemo praesentium deleniti perferendis iure animi quasi qui, quisquam dicta. Amet, animi. Officia consectetur nemo quae nulla.
+        </p>
+    </header>
+    <main>
+            <section class="dormitory-activities">
+                <ul>
+                    <li>С 21.08.2023 по 25.08.2023 гг. в общежития заселяются студенты 1 курса.</li>
+                    <li>28.08.2023 г. среди студентов старших курсов, отметивших (в срок до 30.06.2023г.) галочку о нуждаемости в общежитии, на основе сформированного рейтинга формируется первая очередь заселения на оставшиеся свободные места в общежитиях. Каждому студенту, попавшему в первую волну заселения, необходимо в указанный срок заселиться в то общежитие, которое указано в разделе статуса заявки рейтинга заселения.</li>
+                    <li>До 01.09.2023 г. включително данные студенты должны прийти в указанное общежитие и предоставить пакет документов для заселения (паспорт, медицинская справка о прохождении флюорографии, действующая не более 1 года, 4 фотографии 3х4) и заселиться. Если данные студенты не заселяются в срок до 17:00 01.09.2023, их место автоматически сгорает.</li>
+                    <li>04.09.2023 формируется вторая очередь заселения на оставшиеся свободные места в общежитиях. Каждому студенту, попавшему во вторую волну заселения, необходимо в указанный срок заселиться в то общежитие, которое указано в разделе статуса заявки рейтинга заселения.</li>
+                    <li>До 08.09.2023 включительно данные студенты должны прийти в указанное общежитие и предоставить пакет документов для заселения (паспорт, медицинская справка о прохождении флюорографии, действующая не более 1 года, 4 фотографии 3х4) и заселиться. Если данные студенты не заселяются в срок до 17:00 08.09.2023, их место автоматически сгорает.</li>
+                    <li>С 11.09.2023 при наличии свободных мест заселение продолжается на оставшиеся свободные места. Процедура происходит в том же порядке, до полного заполнения мест в общежитиях.</li>
+                </ul>
+                <p>
+                    Ваша задача – в период с 15.08.2023 г. отслеживать актуальную информацию по рейтингу через Личный кабинет и быть готовым к заселению в общежитие! Заранее планируйте и позаботьтесь о своем прибытии в г. Иркутск (даты оформления билетов на поезд/самолет, необходимые вещи и др.), подготовьте пакет документов для заселения (паспорт, медицинская справка о прохождении флюорографии, действующая не более 1 года, 4 фотографии 3х4).
+                </p>
+                <button id="zaselenie">
+                    zaselitsya
+                </button>
+            </section>
+            <section class="news-list-row">
+                <article class="news">
+                    <img src="https://imgholder.ru/500x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" alt="">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis placeat illum corporis temporibus assumenda iste exercitationem ex iusto, harum in aperiam suscipit consequuntur sequi, facilis accusamus ab sit animi hic.
+                </article>
+                <article class="news">
+                    <img src="https://imgholder.ru/500x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" alt="">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis placeat illum corporis temporibus assumenda iste exercitationem ex iusto, harum in aperiam suscipit consequuntur sequi, facilis accusamus ab sit animi hic.
+                </article>
+            </section>
+            <section class="news-list-row">
+                <article class="news">
+                    <img src="https://imgholder.ru/500x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" alt="">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis placeat illum corporis temporibus assumenda iste exercitationem ex iusto, harum in aperiam suscipit consequuntur sequi, facilis accusamus ab sit animi hic.
+                </article>
+                <article class="news">
+                    <img src="https://imgholder.ru/500x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" alt="">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis placeat illum corporis temporibus assumenda iste exercitationem ex iusto, harum in aperiam suscipit consequuntur sequi, facilis accusamus ab sit animi hic.
+                </article>
+            </section>
+        <section class="outside-activities">
+            <article>
+                <img src="https://imgholder.ru/800x400/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" alt="">
+            </article>
+            <article>
+                <img src="https://imgholder.ru/800x400/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" alt="">
+            </article>
+            <article>
+                <img src="https://imgholder.ru/800x400/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" alt="">
+            </article>
+        </section>
+    </main>
+    <footer>
+        <section class="about">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum unde voluptate perferendis incidunt. Vitae dicta beatae nihil quam accusamus iure veritatis sequi animi, sapiente consequuntur, eaque molestias optio rerum laboriosam!
+        </section>
+        <section class="contacts">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi ea fugit perspiciatis atque eveniet provident commodi nobis dolorum non beatae molestias necessitatibus, eaque magnam neque, cum, velit excepturi recusandae harum.
+        </section>
+    </footer>
+</body>
+</html>
