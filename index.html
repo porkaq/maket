@@ -5,45 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script>
         function openModal ( el )
         {
             $( 'body' ).append( el );
         }
+        function handleFormSubmit ( e ) 
+        {
+            e.preventDefault();
+            let formData = new FormData( $( '.zaselenie' )[0] );
+            JSON.stringify(Object.fromEntries(formData));
+            $.ajax({
+                type: "post",
+                url: "/",
+                data: "formData",
+                dataType: "JSON",
+                // success: function ( response ) {
+                    
+                // }
+            });
+        }
         $( document ).ready( () => {
             $( '#zaselenie' ).on( {
                 click: () => {
-                    let form_wrapper = $( '<div>', {
-                        class: 'form-wrapper'
-                    } );
-                    let form = $( `<form action="#" method="post" target="_blank">
-                                        <h2>Шаблон формы</h2>
-                                        <fieldset>
-                                            <legend>Персональные данные</legend>
-                                                <label for="name">Имя:*</label>
-                                                <input type="text" name="name" placeholder="Иван Иванов" id="name" required>
-
-                                                <label for="age">Возраст:</label>
-                                                <input type="number" name="age" placeholder="27" id="age" min="0" max="125">
-
-                                                <label for="facultet">Факультет</label>
-                                                <input type="text" name="facultet" id="facultet" placeholder="ИСТб-22-1">
-
-                                                <input type="file" name="passport" id="passport">
-                                                <label for="passport">Скан пасспорта</label>
-
-                                                <input type="file" name="flurogr" id="flurogr">
-                                                <label for="flurogr">Флюрография</label>
-                                        </fieldset>
-                                        <div>
-                                            <button type="submit">Отправить</button>
-                                            <p>* — Обязательные поля</p>
-                                        </div>
-                                   </form>` 
-                    ).appendTo( form_wrapper );
-                    openModal( form_wrapper );
+                    let formData = new FormData(  )
+                    JSON.stringify(Object.fromEntries(formData));
                 }
             } )
+            $( '.zaselenie' )[0].addEventListener('submit', handleFormSubmit )
         } )
     </script>
     <style>
@@ -107,7 +98,7 @@
         }
         .news {
             flex-grow: 1;
-            background-color: var(--bg2-color);
+            background-color: var(--bg-color);
             position: relative;
             padding: var(--small-gap);
             border-radius: 15px;
@@ -123,17 +114,49 @@
         }
         .outside-activities {
             display: flex;
+            margin: var(--small-gap);
             gap: var(--small-gap);
             flex-wrap: wrap;
             justify-content: center;
         }
         .outside-activities article {
-            max-width: 500px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            max-width: 480px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 25%, rgba(0, 0, 0, 0));
+        }
+        .outside-activities article p {
+            position: absolute;
+            bottom: 8px;
+            margin: 0;
         }
         .outside-activities article img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+        footer {
+            display: flex;
+            gap: var(--small-gap);
+            margin-top: var(--small-gap);
+            padding: var(--small-gap);
+            background-color: var(--bg-color);
+            border-radius: 15px 15px 0 0;
+        }
+        .contacts {
+            flex-grow: 1;
+        }
+        .about {
+            flex-grow: 1;
+        }
+        .zaselenie {
+            display: flex;
+            flex-direction: column;
+            gap: var(--small-gap);
+        }
+        .zaselenie .submit-wrapper {
+            margin-top: var(--small-gap);
         }
     </style>
 </head>
@@ -159,7 +182,7 @@
                 <p>
                     Ваша задача – в период с 15.08.2023 г. отслеживать актуальную информацию по рейтингу через Личный кабинет и быть готовым к заселению в общежитие! Заранее планируйте и позаботьтесь о своем прибытии в г. Иркутск (даты оформления билетов на поезд/самолет, необходимые вещи и др.), подготовьте пакет документов для заселения (паспорт, медицинская справка о прохождении флюорографии, действующая не более 1 года, 4 фотографии 3х4).
                 </p>
-                <button id="zaselenie">
+                <button data-bs-toggle="modal" data-bs-target="#exampleModal">
                     zaselitsya
                 </button>
             </section>
@@ -186,12 +209,15 @@
         <section class="outside-activities">
             <article>
                 <img src="https://imgholder.ru/800x400/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" alt="">
+                <p>Бассейн записываемся на ноготочки</p>
             </article>
             <article>
                 <img src="https://imgholder.ru/800x400/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" alt="">
+                <p>Бассейн записываемся на ноготочки</p>
             </article>
             <article>
                 <img src="https://imgholder.ru/800x400/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" alt="">
+                <p>Бассейн записываемся на ноготочки</p>
             </article>
         </section>
     </main>
@@ -203,5 +229,41 @@
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi ea fugit perspiciatis atque eveniet provident commodi nobis dolorum non beatae molestias necessitatibus, eaque magnam neque, cum, velit excepturi recusandae harum.
         </section>
     </footer>
+    <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Заявка</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="zaselenie" action="#" method="post" target="_blank">
+                    <h2>Шаблон формы</h2>
+                            <label for="name">Имя:*</label>
+                            <input type="text" name="name" placeholder="Иван Иванов" id="name" required>
+
+                            <label for="age">Возраст:*</label>
+                            <input type="number" name="age" placeholder="27" id="age" min="0" max="125" required>
+
+                            <label for="facultet">Факультет*</label>
+                            <input type="text" name="facultet" id="facultet" placeholder="ИСТб-22-1" required>
+
+                            <label for="passport">Скан пасспорта*</label>
+                            <input type="file" name="passport" id="passport" required>
+
+                            <label for="flurogr">Флюрография</label>
+                            <input type="file" name="flurogr" id="flurogr">
+                    <div class="submit-wrapper">
+                        <button type="submit" class="submit">Отправить</button>
+                        <p>* — Обязательные поля</p>
+                    </div>
+               </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+          </div>
+        </div>
+      </div>
 </body>
 </html>
