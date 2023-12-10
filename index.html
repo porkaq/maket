@@ -258,19 +258,12 @@
         .zaselenie .submit-wrapper {
             margin-top: var(--small-gap);
         }
-        @media (max-width: 1200px) {
-            .news-list-row {
-                flex-wrap: wrap;
+        @media (max-width: 420px) {
+            .newslist-smallcard .news-item {
+                min-width: 150px;
             }
-        }
-        @media (max-width: 525px) {
-            .news-list-row .news img {
-                max-width: 100%;
-                height: auto;
-            }
-            .news-list-row .news {
-                min-width: unset;
-                max-height: 500px;
+            .newslist-smallcard .news-item-empty {
+                min-width: 150px;
             }
         }
     </style>
