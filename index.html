@@ -46,8 +46,10 @@
             --active-text-color: #003398;
             --active-light-text-color: rgb(11, 78, 223);
             --dark-text-color: #1b4965;
+            --darker-text-color: #133347;
             --small-gap: 10px;
             --big-gap: 25px;
+            --bs-body-color: var(--dark-text-color); 
         }
         body {
             margin: 0;
@@ -58,9 +60,12 @@
         }
         .head {
             display: flex;
+            position: fixed;
+            top: 0;
+            z-index: 50;
+            width: 100%;
             flex-wrap: nowrap;
             max-height: 80px;
-            position: relative;
             padding: 8px;
             background-color: var(--bg2-color);
             color: var(--active-text-color);
@@ -100,30 +105,41 @@
             flex-grow: 1;
             flex-basis: 0;
         }
+
         main {
-            /* margin-inline: 40px;
-            background-color: var(--bg2-color); */
+            margin-top: 80px;
         }
-        /* .head h1 {
-            display: inline;
-            font-size: 26px;
-            color: var(--fg-color);
-            margin-bottom: 8px;
-        }
-        .head p {
-            font-size: 16px;
-            color: var(--dark-text-color);
-        } */
-        /* .row-2 {
-            display: flex;
-            flex-wrap: nowrap;
-            gap: var(--small-gap);
-            margin: var(--small-gap);
-        } */
         main h2 {
             margin-top: var(--big-gap);
             margin-bottom: var(--small-gap);
             margin-inline: var(--big-gap);
+        }
+
+        .banner {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            width: 100%;
+            height: 300px;
+        }
+        .banner img {
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+        }
+        .banner::after {
+            position: absolute;
+            content: "";
+            z-index: 5;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 25%, transparent);
+        }
+        .banner p {
+            position: absolute;
+            font-size: 30px;
+            color: white;
+            bottom: var(--small-gap);
+            z-index: 10;
         }
         .dormitory-activities {
             margin-inline: var(--small-gap);
@@ -132,20 +148,19 @@
             font-size: 16px;
             border-radius: 15px;
             background-color: var(--bg-color);
-            color: var(--dark-text-color);
         }
         .dormitory-activities button {
             max-width: 300px;
             height: 80px;
             padding: 15px;
             font-size: 16px;
-            color: var(--dark-text-color);
             background-color: var(--act-color);
             border-radius: 15px;
             border: none;
         }
 
         .newslist-smallcard {
+            color: var(--darker-text-color);
             display: flex;
             flex-wrap: wrap;
             position: relative;
@@ -200,6 +215,7 @@
             flex-grow: 1;
         }
         .outside-activities {
+            color: var(--darker-text-color);
             display: flex;
             margin: var(--small-gap);
             gap: var(--small-gap);
@@ -219,15 +235,14 @@
             z-index: 5;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to top, rgba(255, 255, 255, 0.4) 25%, rgba(0, 0, 0, 0));
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 25%, rgba(0, 0, 0, 0));
         }
         .outside-activities article p {
             position: absolute;
             z-index: 10;
-            color: black;
             bottom: 8px;
             margin: 0;
-            font-weight: bolder;
+            color: white;
         }
         .outside-activities article img {
             width: 100%;
@@ -240,6 +255,7 @@
             margin-top: var(--small-gap);
             padding: var(--small-gap);
             background-color: var(--bg2-color);
+            color: var(--darker-text-color);
             border-radius: 15px 15px 0 0;
         }
         .contacts {
@@ -265,6 +281,9 @@
             .newslist-smallcard .news-item-empty {
                 min-width: 150px;
             }
+            .head {
+                position: absolute;
+            }
         }
     </style>
 </head>
@@ -281,6 +300,10 @@
         </div>
     </header>
     <main>
+        <div class="banner">
+            <img src="objaka2.png" alt="">
+            <p>Подавай заявку!</p>
+        </div>
         <h2>Главные новости</h2>
         <div class="newslist-smallcard">
         <div class="news-item">
