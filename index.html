@@ -53,6 +53,9 @@
             margin: 0;
             background-color: var(--bg-color);
         }
+        p {
+            margin: 0;
+        }
         .head {
             display: flex;
             flex-wrap: nowrap;
@@ -60,7 +63,6 @@
             position: relative;
             padding: 8px;
             background-color: var(--bg2-color);
-            border-radius: 0 0 15px 15px;
             color: var(--active-text-color);
         }
         .head img {
@@ -118,8 +120,14 @@
             gap: var(--small-gap);
             margin: var(--small-gap);
         } */
+        main h2 {
+            margin-top: var(--big-gap);
+            margin-bottom: var(--small-gap);
+            margin-inline: var(--big-gap);
+        }
         .dormitory-activities {
-            margin: var(--small-gap);
+            margin-inline: var(--small-gap);
+            margin-bottom: var(--small-gap);
             padding: var(--small-gap);
             font-size: 16px;
             border-radius: 15px;
@@ -136,26 +144,60 @@
             border-radius: 15px;
             border: none;
         }
-        .news-list-row {
+
+        .newslist-smallcard {
             display: flex;
-            flex-wrap: nowrap;
-            gap: var(--small-gap);
-            color: var(--dark-text-color);
-            margin: var(--small-gap);
-        }
-        .news {
-            flex-grow: 1;
-            /* background-color: var(--bg-color); */
+            flex-wrap: wrap;
             position: relative;
-            padding: var(--small-gap);
-            border-radius: 15px;
+            margin-inline: var(--big-gap);
         }
-        .news img {
-            max-width: 50%;
-            height: 100%;
-            object-fit: cover;
-            float: left;
-            margin: 0 10px 5px 0;
+
+        .newslist-smallcard .news-item {
+            background-color: var(--bg2-color);
+            width: 22%;
+            min-width: 350px;
+            position: relative;
+            flex-grow: 1;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .newslist-smallcard .news-item-empty {
+            width: 22%;
+            min-width: 350px;
+            flex-grow: 1;
+            margin: 0 10px;
+        }
+        .newslist-smallcard .news-item-image {
+            height: 250px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .newslist-smallcard .news-item-image img {
+            width: auto;
+            height: auto;
+            min-width: 100%;
+            min-height: 100%;
+        }
+        .newslist-smallcard .news-item-categories {
+            display: flex;
+        }
+        .newslist-smallcard .news-item-category {
+            flex-grow: 1;
+            font-size: 60%;
+            padding: 5px 10px 7px 10px;
+            text-align: center;
+            line-height: 1em;
+        }
+        .newslist-smallcard .news-item-header {
+            padding: 1em;
+            font-weight: bold;
+            flex-grow: 1;
         }
         .outside-activities {
             display: flex;
@@ -169,12 +211,23 @@
             display: flex;
             justify-content: center;
             max-width: 480px;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 25%, rgba(0, 0, 0, 0));
+            max-height: 520px;
+        }
+        .outside-activities article::after {
+            position: absolute;;
+            content: "";
+            z-index: 5;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(255, 255, 255, 0.4) 25%, rgba(0, 0, 0, 0));
         }
         .outside-activities article p {
             position: absolute;
+            z-index: 10;
+            color: black;
             bottom: 8px;
             margin: 0;
+            font-weight: bolder;
         }
         .outside-activities article img {
             width: 100%;
@@ -190,13 +243,10 @@
             border-radius: 15px 15px 0 0;
         }
         .contacts {
-            display: flex;
-            justify-content: right;
             flex-grow: 1;
             flex-basis: 0;
         }
         .about {
-            display: flex;
             flex-grow: 1;
             flex-basis: 0;
         }
@@ -218,6 +268,10 @@
                 max-width: 100%;
                 height: auto;
             }
+            .news-list-row .news {
+                min-width: unset;
+                max-height: 500px;
+            }
         }
     </style>
 </head>
@@ -234,47 +288,64 @@
         </div>
     </header>
     <main>
-            <section class="news-list-row">
-                <article class="news">
-                    <img src="https://imgholder.ru/500x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" alt="">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis placeat illum corporis temporibus assumenda iste exercitationem ex iusto, harum in aperiam suscipit consequuntur sequi, facilis accusamus ab sit animi hic.
-                </article>
-                <article class="news">
-                    <img src="https://imgholder.ru/500x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" alt="">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis placeat illum corporis temporibus assumenda iste exercitationem ex iusto, harum in aperiam suscipit consequuntur sequi, facilis accusamus ab sit animi hic.
-                </article>
-            </section>
-            <section class="news-list-row">
-                <article class="news">
-                    <img src="https://imgholder.ru/500x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" alt="">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis placeat illum corporis temporibus assumenda iste exercitationem ex iusto, harum in aperiam suscipit consequuntur sequi, facilis accusamus ab sit animi hic.
-                </article>
-                <article class="news">
-                    <img src="https://imgholder.ru/500x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" alt="">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis placeat illum corporis temporibus assumenda iste exercitationem ex iusto, harum in aperiam suscipit consequuntur sequi, facilis accusamus ab sit animi hic.
-                </article>
-            </section>
+        <h2>Главные новости</h2>
+        <div class="newslist-smallcard">
+        <div class="news-item">
+            <div class="news-item-image">
+                <img src="https://istu.edu/upload/iblock/48a/r3o6my2olw6wfyssatwath1mqjlxlb1m/IMG_2314.jpg">
+            </div>
+            <div class="news-item-header">Политеховцы получили грантовую поддержку в рамках проекта «Авангард науки»</div>
+            </div>
+        
+            <div class="news-item action" data-params="{'action':'goURL','url':'/news/74896/'}">
+            <div class="news-item-image"><img src="https://istu.edu/upload/iblock/271/8k87ao6tcivoswxl7z00gswimg2wpwrc/fizvuz.jpg"></div>
+            <div class="news-item-header">ИРНИТУ – лучшее учреждение высшего профессионального образования Иркутской области в сфере физической культуры и спорта в 2023 году</div>
+            </div>
+        
+            <div class="news-item action" data-params="{'action':'goURL','url':'/news/74895/'}">
+            <div class="news-item-image"><img src="https://istu.edu/upload/iblock/76c/vdqcxfpmsjqm7an0vdhwgcfh0tqjmjbq/IMG_2074.jpg"></div>
+            <div class="news-item-header">Конференция ИРНИТУ по вопросам производственного менеджмента заинтересовала более 20 докладчиков из российских вузов</div>
+            </div>
+        
+            <div class="news-item action" data-params="{'action':'goURL','url':'/news/74890/'}">
+            <div class="news-item-image"><img src="https://istu.edu/upload/iblock/c7d/1xhrey18ngs4580vbiijud8n0ilfggae/IMG_1291.jpg"></div>
+            <div class="news-item-header">«ПРО-Степ» в ИРНИТУ: исторический квиз, ирландская и цыганская чечётка </div>
+            </div>
+            <div class="news-item action" data-params="{'action':'goURL','url':'/news/74895/'}">
+                <div class="news-item-image"><img src="https://istu.edu/upload/iblock/76c/vdqcxfpmsjqm7an0vdhwgcfh0tqjmjbq/IMG_2074.jpg"></div>
+                <div class="news-item-header">Конференция ИРНИТУ по вопросам производственного менеджмента заинтересовала более 20 докладчиков из российских вузов</div>
+                </div>
+        
+            <div class="news-item-empty"></div>
+            <div class="news-item-empty"></div>
+            <div class="news-item-empty"></div>
+        </div>
+    </div>
+        <h2>Активности студгородка</h2>
         <section class="outside-activities">
             <article>
-                <img src="https://imgholder.ru/800x400/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" alt="">
-                <p>Бассейн записываемся на ноготочки</p>
+                <img src="pool.jpg" alt="">
+                <p>Запись в бассейн</p>
             </article>
             <article>
-                <img src="https://imgholder.ru/800x400/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" alt="">
-                <p>Бассейн записываемся на ноготочки</p>
+                <img src="cafe.jpg" alt="">
+                <p>Бронь столика, доставка еды</p>
             </article>
             <article>
-                <img src="https://imgholder.ru/800x400/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" alt="">
-                <p>Бассейн записываемся на ноготочки</p>
+                <img src="pizza.jpg" alt="">
+                <p>Доставка пиццы</p>
             </article>
         </section>
     </main>
     <footer>
         <section class="about">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum unde voluptate perferendis incidunt. Vitae dicta beatae nihil quam accusamus iure veritatis sequi animi, sapiente consequuntur, eaque molestias optio rerum laboriosam!
+            <h2>О нас:</h2>
+            <p>??</p>
         </section>
         <section class="contacts">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi ea fugit perspiciatis atque eveniet provident commodi nobis dolorum non beatae molestias necessitatibus, eaque magnam neque, cum, velit excepturi recusandae harum.
+            <h2>Контакты</h2>
+            <p>Телефон: 8800535353</p>
+            <p>E-mail: istu@ex.edu</p>
         </section>
     </footer>
     <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
