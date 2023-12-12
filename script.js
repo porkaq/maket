@@ -24,7 +24,7 @@ async function initMap() {
 
     // Добавляем слой для отображения схематической карты
     map.addChild(new YMapDefaultSchemeLayer());
-    $( map ).css( 'height', '400px' );
+    $( '#map' ).css( 'height', '400px' );
 }
 //<--temp
 function changeColor ( params ) 
