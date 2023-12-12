@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="https://api-maps.yandex.ru/v3/?apikey=629b13eb-65da-4bb7-9422-6031163de9ee&lang=ru_RU"></script>
+    <script src="script.js"></script>
+    <script src="form.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="head">
+        <div class="left">
+            <a href="index.html" style="height: 100%"><img src="istu2.png" alt=""></a>
+            <a href="form.html">Заселение</a>
+            <span>какая то страница</span>
+        </div>
+
+        <div class="right">
+            <label for="color1">background</label>
+            <input type="color" name="color1" id="color1">
+            <label for="color2">foreground</label>
+            <input type="color" name="color2" id="color2">
+            <label for="color4">text</label>
+            <input type="color" name="color4" id="color4">
+            <label for="color5">dark text</label>
+            <input type="color" name="color5" id="color5">
+            <label for="color6">active text</label>
+            <input type="color" name="color6" id="color6">
+            <label for="color7">light text</label>
+            <input type="color" name="color7" id="color7">
+            <label for="radius">border-radiust</label>
+            <input type="number" name="radius" id="radius">
+            <label for="radio">1</label>
+            <input type="radio" name="radio" id="radio" value="1">
+            <label for="radio">2</label>
+            <input type="radio" name="radio" id="radio" value="2">
+            <label for="radio">3</label>
+            <input type="radio" name="radio" id="radio" value="3">
+        </div>
+    </header>
+    <!-- /HEADER -->
+    <main>
+        <h2>Форма</h2>
+        <form class="zaselenie" action="#" method="post" target="_blank">
+            <div class="input-wrapper">
+                <label for="name">Имя:*</label>
+                <input type="text" name="name" placeholder="Иван Иванов" id="name" required>
+            </div>
+
+            <div class="input-wrapper">
+                <label for="age">Возраст:*</label>
+                <input type="number" name="age" placeholder="27" id="age" min="0" max="125" required>
+            </div>
+
+            <div class="input-wrapper">
+                <label for="facultet">Факультет*</label>
+                <input type="text" name="facultet" id="facultet" placeholder="ИСТб-22-1" required>
+            </div>
+
+            <div class="input-wrapper">
+                <label for="passport">Скан пасспорта*</label>
+                <input type="file" name="passport" id="passport" required>
+            </div>
+
+            <div class="input-wrapper">
+                <label for="flurogr">Флюрография</label>
+                <input type="file" name="flurogr" id="flurogr">
+            </div>
+            <div class="submit-wrapper">
+                <button type="submit" class="submit">Отправить</button>
+                <p>* — Обязательные поля</p>
+            </div>
+        </form>
+    </main>
+    <!-- FOOTER -->
+    <footer>
+        <footer>
+            <section class="about">
+                <h2>О нас:</h2>
+                <p>??</p>
+            </section>
+            <section class="contacts">
+                <h2>Контакты</h2>
+                <p>Телефон: 8800535353</p>
+                <p>E-mail: istu@ex.edu</p>
+            </section>
+        </footer>
+    </footer>
+    <!-- /FOOTER -->
+</body>
+</html>
