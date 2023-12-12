@@ -17,14 +17,14 @@ async function initMap() {
                 center: [52.262615, 104.261490],
 
                 // Уровень масштабирования
-                zoom: 10
+                zoom: 18
             }
         }
     );
 
     // Добавляем слой для отображения схематической карты
     map.addChild(new YMapDefaultSchemeLayer());
-    $( '#map' ).css( 'height', '400px' );
+    // $( '#map' ).css( 'height', '400px' );
 }
 //<--temp
 function changeColor ( params ) 
