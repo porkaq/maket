@@ -34,7 +34,14 @@
                     JSON.stringify(Object.fromEntries(formData));
                 }
             } )
-            $( '.zaselenie' )[0].addEventListener('submit', handleFormSubmit )
+            $( '.zaselenie' )[0].addEventListener('submit', handleFormSubmit );
+            $( '#color1' )[0].value = ( '' + $(':root').css('--bg-color') );
+            $( '#color2' )[0].value = ( '' + $(':root').css('--bg2-color') );
+            $( '#color4' )[0].value = ( '' + $(':root').css('--text-color') );
+            $( '#color5' )[0].value = ( '' + $(':root').css('--darker-text-color') );
+            $( '#color6' )[0].value = ( '' + $(':root').css('--active-text-color') );
+            $( '#color7' )[0].value = ( '' + $(':root').css('--light-text-color') );
+
             $( '#color1' ).on( 'change', (e) => { changeColor( {'css_var': '--bg-color', color: e.target.value } ) } );
             $( '#color2' ).on( 'change', (e) => { changeColor( {'css_var': '--bg2-color', color: e.target.value } ) } );
             $( '#color4' ).on( 'change', (e) => { changeColor( {'css_var': '--text-color', color: e.target.value } ) } );
