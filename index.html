@@ -8,10 +8,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script>
-        function openModal ( el )
-        {
-            $( 'body' ).append( el );
-        }
         function handleFormSubmit ( e ) 
         {
             e.preventDefault();
@@ -27,6 +23,10 @@
                 // }
             });
         }
+        function changeColor ( params ) 
+        {
+            $( 'body' ).css( params.css_var, params.color );
+        }
         $( document ).ready( () => {
             $( '#zaselenie' ).on( {
                 click: () => {
@@ -35,9 +35,21 @@
                 }
             } )
             $( '.zaselenie' )[0].addEventListener('submit', handleFormSubmit )
+            $( '#color1' ).on( 'change', (e) => { changeColor( {'css_var': '--bg-color', color: e.target.value } ) } );
+            $( '#color2' ).on( 'change', (e) => { changeColor( {'css_var': '--bg2-color', color: e.target.value } ) } );
+            $( '#color4' ).on( 'change', (e) => { changeColor( {'css_var': '--text-color', color: e.target.value } ) } );
+            $( '#color5' ).on( 'change', (e) => { changeColor( {'css_var': '--darker-text-color', color: e.target.value } ) } );
+            $( '#color6' ).on( 'change', (e) => { changeColor( {'css_var': '--active-text-color', color: e.target.value } ) } );
+            $( '#color7' ).on( 'change', (e) => { changeColor( {'css_var': '--light-text-color', color: e.target.value } ) } );
         } )
     </script>
     <style>
+        .right label {
+            margin-right: 5px;
+        }
+        .right input {
+            margin-right: 20px;
+        }
         :root {
             --bg-color: #bee9e8;
             --bg2-color: #62b6cb;
@@ -45,13 +57,15 @@
             --act-color: #2fb8e5;
             --active-text-color: #003398;
             --active-light-text-color: rgb(11, 78, 223);
-            --dark-text-color: #1b4965;
+            --text-color: #1b4965;
             --darker-text-color: #133347;
+            --light-text-color: white;
             --small-gap: 10px;
             --big-gap: 25px;
-            --bs-body-color: var(--dark-text-color); 
+            /* --bs-body-color: var(--text-color);  */
         }
         body {
+            color: var(--text-color);
             margin: 0;
             background-color: var(--bg-color);
         }
@@ -137,7 +151,7 @@
         .banner p {
             position: absolute;
             font-size: 30px;
-            color: white;
+            color: var(--light-text-color);
             bottom: var(--small-gap);
             z-index: 10;
         }
@@ -243,7 +257,7 @@
             z-index: 10;
             bottom: 8px;
             margin: 0;
-            color: white;
+            color: var(--light-text-color);
         }
         .outside-activities article img {
             width: 100%;
@@ -257,6 +271,7 @@
             padding: var(--small-gap);
             background-color: var(--bg2-color);
             color: var(--darker-text-color);
+            border-radius: 15px 15px 0 0;
         }
         .contacts {
             flex-grow: 1;
@@ -296,7 +311,18 @@
         </div>
 
         <div class="right">
-
+            <label for="color1">background</label>
+            <input type="color" name="color1" id="color1">
+            <label for="color2">foreground</label>
+            <input type="color" name="color2" id="color2">
+            <label for="color4">text</label>
+            <input type="color" name="color4" id="color4">
+            <label for="color5">dark text</label>
+            <input type="color" name="color5" id="color5">
+            <label for="color6">active text</label>
+            <input type="color" name="color6" id="color6">
+            <label for="color7">light text</label>
+            <input type="color" name="color7" id="color7">
         </div>
     </header>
     <main>
