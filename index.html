@@ -6,323 +6,16 @@
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="https://api-maps.yandex.ru/v3/?apikey=629b13eb-65da-4bb7-9422-6031163de9ee&lang=ru_RU"></script>
+    <script src="script.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script>
-        function handleFormSubmit ( e ) 
-        {
-            e.preventDefault();
-            let formData = new FormData( $( '.zaselenie' )[0] );
-            JSON.stringify(Object.fromEntries(formData));
-            $.ajax({
-                type: "post",
-                url: "/",
-                data: "formData",
-                dataType: "JSON",
-                // success: function ( response ) {
-                    
-                // }
-            });
-        }
-        function changeColor ( params ) 
-        {
-            $( 'body' ).css( params.css_var, params.color );
-        }
-        $( document ).ready( () => {
-            $( '#zaselenie' ).on( {
-                click: () => {
-                    let formData = new FormData(  )
-                    JSON.stringify(Object.fromEntries(formData));
-                }
-            } )
-            $( '.zaselenie' )[0].addEventListener('submit', handleFormSubmit );
-            $( '#color1' )[0].value = ( '' + $(':root').css('--bg-color') );
-            $( '#color2' )[0].value = ( '' + $(':root').css('--bg2-color') );
-            $( '#color4' )[0].value = ( '' + $(':root').css('--text-color') );
-            $( '#color5' )[0].value = ( '' + $(':root').css('--darker-text-color') );
-            $( '#color6' )[0].value = ( '' + $(':root').css('--active-text-color') );
-            $( '#color7' )[0].value = ( '' + $(':root').css('--light-text-color') );
-
-            $( '#color1' ).on( 'change', (e) => { changeColor( {'css_var': '--bg-color', color: e.target.value } ) } );
-            $( '#color2' ).on( 'change', (e) => { changeColor( {'css_var': '--bg2-color', color: e.target.value } ) } );
-            $( '#color4' ).on( 'change', (e) => { changeColor( {'css_var': '--text-color', color: e.target.value } ) } );
-            $( '#color5' ).on( 'change', (e) => { changeColor( {'css_var': '--darker-text-color', color: e.target.value } ) } );
-            $( '#color6' ).on( 'change', (e) => { changeColor( {'css_var': '--active-text-color', color: e.target.value } ) } );
-            $( '#color7' ).on( 'change', (e) => { changeColor( {'css_var': '--light-text-color', color: e.target.value } ) } );
-            $( '#radius' ).on( 'change', (e) => { $( 'body' ).css( '--border-radius', e.target.value + 'px' ) } );
-        } )
-    </script>
-    <style>
-        .right label {
-            margin-right: 5px;
-        }
-        .right input {
-            margin-right: 20px;
-        }
-        :root {
-            --bg-color: #bee9e8;
-            --bg2-color: #62b6cb;
-            --fg-color: #0096c7;
-            --act-color: #2fb8e5;
-            --active-text-color: #003398;
-            --active-light-text-color: rgb(11, 78, 223);
-            --text-color: #1b4965;
-            --darker-text-color: #133347;
-            --light-text-color: white;
-            --border-radius: 0px;
-            --small-gap: 10px;
-            --big-gap: 25px;
-            /* --bs-body-color: var(--text-color);  */
-        }
-        body {
-            color: var(--text-color);
-            margin: 0;
-            background-color: var(--bg-color);
-        }
-        p {
-            margin: 0;
-        }
-        .head {
-            display: flex;
-            position: fixed;
-            top: 0;
-            z-index: 50;
-            width: 100%;
-            flex-wrap: nowrap;
-            max-height: 80px;
-            padding: 8px;
-            background-color: var(--bg2-color);
-            color: var(--active-text-color);
-            border-radius: 0 0 var(--border-radius) var(--border-radius);
-        }
-        .head img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-        .head .left {
-            display: flex;
-            justify-content: left;
-            align-items: center;
-            gap: 20px;
-            margin-left: var(--small-gap);
-            flex-grow: 1;
-            flex-basis: 0;
-        }
-        .head .left > img, .head .left > span {
-            cursor: pointer;
-            transition: all .5s;
-        }
-        .head .left span:hover {
-            color: var(--active-light-text-color);
-        }
-        .head .center {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: var(--small-gap);
-            flex-grow: 3;
-            flex-basis: 0;
-        }
-        .head .right {
-            display: flex;
-            justify-content: right;
-            flex-grow: 1;
-            flex-basis: 0;
-        }
-
-        main {
-            margin-top: 80px;
-        }
-        main h2 {
-            margin-top: var(--big-gap);
-            margin-bottom: var(--small-gap);
-            margin-inline: var(--big-gap);
-        }
-
-        .banner {
-            display: flex;
-            position: relative;
-            justify-content: center;
-            width: 100%;
-            height: 300px;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-        }
-        .banner img {
-            min-width: 100%;
-            min-height: 100%;
-            object-fit: cover;
-        }
-        .banner::after {
-            position: absolute;
-            content: "";
-            z-index: 5;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 25%, transparent);
-        }
-        .banner p {
-            position: absolute;
-            font-size: 30px;
-            color: var(--light-text-color);
-            bottom: var(--small-gap);
-            z-index: 10;
-        }
-        .dormitory-activities {
-            margin-inline: var(--small-gap);
-            margin-bottom: var(--small-gap);
-            padding: var(--small-gap);
-            font-size: 16px;
-            border-radius: 15px;
-            background-color: var(--bg-color);
-        }
-        .dormitory-activities button {
-            max-width: 300px;
-            height: 80px;
-            padding: 15px;
-            font-size: 16px;
-            background-color: var(--act-color);
-            border-radius: 15px;
-            border: none;
-        }
-
-        .newslist-smallcard {
-            color: var(--darker-text-color);
-            display: flex;
-            flex-wrap: wrap;
-            position: relative;
-            margin-inline: var(--big-gap);
-        }
-
-        .newslist-smallcard .news-item {
-            background-color: var(--bg2-color);
-            width: 22%;
-            min-width: 350px;
-            position: relative;
-            flex-grow: 1;
-            margin: 10px;
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-        }
-
-        .newslist-smallcard .news-item-empty {
-            width: 22%;
-            min-width: 350px;
-            flex-grow: 1;
-            margin: 0 10px;
-        }
-        .newslist-smallcard .news-item-image {
-            height: 250px;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-        .newslist-smallcard .news-item-image img {
-            width: auto;
-            height: auto;
-            min-width: 100%;
-            min-height: 100%;
-            object-fit: cover;
-        }
-        .newslist-smallcard .news-item-categories {
-            display: flex;
-        }
-        .newslist-smallcard .news-item-category {
-            flex-grow: 1;
-            font-size: 60%;
-            padding: 5px 10px 7px 10px;
-            text-align: center;
-            line-height: 1em;
-        }
-        .newslist-smallcard .news-item-header {
-            padding: 1em;
-            font-weight: bold;
-            flex-grow: 1;
-        }
-        .outside-activities {
-            color: var(--darker-text-color);
-            display: flex;
-            margin: var(--small-gap);
-            gap: var(--small-gap);
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .outside-activities article {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            max-width: 480px;
-            max-height: 520px;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-        }
-        .outside-activities article::after {
-            position: absolute;;
-            content: "";
-            z-index: 5;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 25%, rgba(0, 0, 0, 0));
-        }
-        .outside-activities article p {
-            position: absolute;
-            z-index: 10;
-            bottom: 8px;
-            margin: 0;
-            color: var(--light-text-color);
-        }
-        .outside-activities article img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        footer {
-            display: flex;
-            gap: var(--big-gap);
-            margin-top: var(--small-gap);
-            padding: var(--small-gap);
-            background-color: var(--bg2-color);
-            color: var(--darker-text-color);
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
-        }
-        .contacts {
-            flex-grow: 1;
-            flex-basis: 0;
-        }
-        .about {
-            flex-grow: 1;
-            flex-basis: 0;
-        }
-        .zaselenie {
-            display: flex;
-            flex-direction: column;
-            gap: var(--small-gap);
-        }
-        .zaselenie .submit-wrapper {
-            margin-top: var(--small-gap);
-        }
-        @media (max-width: 420px) {
-            .newslist-smallcard .news-item {
-                min-width: 150px;
-            }
-            .newslist-smallcard .news-item-empty {
-                min-width: 150px;
-            }
-            .head {
-                position: absolute;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="head">
         <div class="left">
-            <img src="istu2.png" alt="">
-            <span>kакая то страница</span>
+            <a href="index.html" style="height: 100%"><img src="istu2.png" alt=""></a>
+            <a href="form.html">Заселение</a>
             <span>какая то страница</span>
         </div>
 
@@ -341,13 +34,21 @@
             <input type="color" name="color7" id="color7">
             <label for="radius">border-radiust</label>
             <input type="number" name="radius" id="radius">
+            <label for="radio">1</label>
+            <input type="radio" name="radio" id="radio" value="1">
+            <label for="radio">2</label>
+            <input type="radio" name="radio" id="radio" value="2">
+            <label for="radio">3</label>
+            <input type="radio" name="radio" id="radio" value="3">
         </div>
     </header>
     <main>
-        <div class="banner">
-            <img src="objaka2.png" alt="">
-            <p>Подавай заявку!</p>
-        </div>
+        <a href="form.html">
+            <div class="banner">
+                <img src="objaka2.png" alt="">
+                <p>Подавай заявку!</p>
+            </div>
+        </a>    
         <h2>Главные новости</h2>
         <div class="newslist-smallcard">
         <div class="news-item">
@@ -396,6 +97,7 @@
                 <p>Доставка пиццы</p>
             </article>
         </section>
+        <div id="map" style="width: 100%; height: 0px"></div>
     </main>
     <footer>
         <section class="about">
@@ -408,41 +110,5 @@
             <p>E-mail: istu@ex.edu</p>
         </section>
     </footer>
-    <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Заявка</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form class="zaselenie" action="#" method="post" target="_blank">
-                    <h2>Шаблон формы</h2>
-                            <label for="name">Имя:*</label>
-                            <input type="text" name="name" placeholder="Иван Иванов" id="name" required>
-
-                            <label for="age">Возраст:*</label>
-                            <input type="number" name="age" placeholder="27" id="age" min="0" max="125" required>
-
-                            <label for="facultet">Факультет*</label>
-                            <input type="text" name="facultet" id="facultet" placeholder="ИСТб-22-1" required>
-
-                            <label for="passport">Скан пасспорта*</label>
-                            <input type="file" name="passport" id="passport" required>
-
-                            <label for="flurogr">Флюрография</label>
-                            <input type="file" name="flurogr" id="flurogr">
-                    <div class="submit-wrapper">
-                        <button type="submit" class="submit">Отправить</button>
-                        <p>* — Обязательные поля</p>
-                    </div>
-               </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-            </div>
-          </div>
-        </div>
-      </div>
 </body>
 </html>
