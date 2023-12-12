@@ -25,6 +25,10 @@ async function initMap() {
 
     // Добавляем слой для отображения схематической карты
     map.addChild(new YMapDefaultSchemeLayer());
+    map.setLocation({
+      center: [52.262615, 104.261490],
+      zoom: 18
+    });
 }
 //<--temp
 function changeColor ( params ) 
