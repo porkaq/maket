@@ -18,7 +18,7 @@ async function initMap() {
                 center: [104.261908, 52.262699],
 
                 // Уровень масштабирования
-                zoom: 15
+                zoom: 17
             }
         }
     );
