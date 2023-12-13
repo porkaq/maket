@@ -1,31 +1,20 @@
-initMap();
-    async function initMap() {
-        // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
-        await ymaps3.ready;
-        $( '#map' ).css( 'height', '400px' );
-    
-        const {YMap, YMapDefaultSchemeLayer} = ymaps3;
-    
-        // Иницилиазируем карту
-        const map = new YMap(
-            // Передаём ссылку на HTMLElement контейнера
-            document.getElementById('map'),
-    
-            // Передаём параметры инициализации карты
-            {
-                location: {
-                    // Координаты центра карты
-                    center: [52.262699, 104.261908],
-    
-                    // Уровень масштабирования
-                    zoom: 10
-                }
-            }
-        );
-    
-        // Добавляем слой для отображения схематической карты
-        map.addChild(new YMapDefaultSchemeLayer());
-    }
+var myMap;
+
+// Дождёмся загрузки API и готовности DOM.
+ymaps.ready(init);
+
+function init () {
+    // Создание экземпляра карты и его привязка к контейнеру с
+    // заданным id ("map").
+    myMap = new ymaps.Map('map', {
+        // При инициализации карты обязательно нужно указать
+        // её центр и коэффициент масштабирования.
+        center: [52.262699, 104.261908], // Москва
+        zoom: 15
+    }, {
+        searchControlProvider: 'yandex#search'
+    });
+}
 //<--temp
 function changeColor ( params ) 
 {
