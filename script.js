@@ -15,7 +15,7 @@ async function initMap() {
         {
             location: {
                 // Координаты центра карты
-                center: [37.588144, 55.733842],
+                center: [52.262699, 104.261908],
 
                 // Уровень масштабирования
                 zoom: 10
@@ -23,6 +23,7 @@ async function initMap() {
         }
     );
 
+    $( '#map' ).css( 'height', '400px');
     // Добавляем слой для отображения схематической карты
     map.addChild(new YMapDefaultSchemeLayer());
 }
