@@ -1,11 +1,4 @@
-//<--temp
-function changeColor ( params ) 
-{
-    $( 'body' ).css( params.css_var, params.color );
-}
-$( document ).ready( () => {
-
-    initMap();
+initMap();
     async function initMap() {
         // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
         await ymaps3.ready;
@@ -33,10 +26,12 @@ $( document ).ready( () => {
         // Добавляем слой для отображения схематической карты
         map.addChild(new YMapDefaultSchemeLayer());
     }
-
-
-
-    
+//<--temp
+function changeColor ( params ) 
+{
+    $( 'body' ).css( params.css_var, params.color );
+}
+$( document ).ready( () => {
     function changeDefault ( params = {} )
     {
         if ( params == {} || params == true ) {
