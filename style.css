@@ -238,13 +238,15 @@ main h2 {
     object-fit: cover;
 }
 footer {
-    display: flex;
-    gap: var(--big-gap);
     margin-top: var(--small-gap);
     padding: var(--small-gap);
     background-color: var(--bg2-color);
     color: var(--darker-text-color);
     border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+footer .footer-row {
+    display: flex;
+    gap: var(--big-gap);
 }
 .contacts {
     flex-grow: 1;
