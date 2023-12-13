@@ -260,9 +260,6 @@ footer .footer-row {
     display: flex;
     flex-direction: column;
     gap: var(--small-gap);
-    margin-inline: var(--big-gap);
-    margin-bottom: var(--big-gap);
-    margin-top: var(--small-gap);
 }
 .zaselenie .input-wrapper {
     max-width: 30%;
