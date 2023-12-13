@@ -286,10 +286,10 @@ footer .footer-row {
         margin-inline: var(--small-gap);
 }
     .newslist-smallcard .news-item {
-        min-width: 150px;
+        min-width: 100%;
     }
     .newslist-smallcard .news-item-empty {
-        min-width: 150px;
+/*         min-width: 150px; */
     }
     .head {
         position: absolute;
