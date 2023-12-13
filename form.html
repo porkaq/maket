@@ -51,37 +51,66 @@
     </header>
     <!-- /HEADER -->
     <main>
-        <h2>Форма</h2>
-        <form class="zaselenie" action="#" method="post" target="_blank">
-            <div class="input-wrapper">
-                <label for="name">Имя:*</label>
-                <input type="text" name="name" placeholder="Иван Иванов" id="name" required>
+        <div style="display: flex; gap: var(--big-gap);">
+            <form class="zaselenie" action="#" method="post" target="_blank">
+                <h2>Форма</h2>
+                <div class="input-wrapper">
+                    <label for="name">Имя:*</label>
+                    <input type="text" name="name" placeholder="Иван Иванов" id="name" required>
+                </div>
+    
+                <div class="input-wrapper">
+                    <label for="age">Возраст:*</label>
+                    <input type="number" name="age" placeholder="27" id="age" min="0" max="125" required>
+                </div>
+    
+                <div class="input-wrapper">
+                    <label for="facultet">Факультет*</label>
+                    <input type="text" name="facultet" id="facultet" placeholder="ИСТб-22-1" required>
+                </div>
+    
+                <div class="input-wrapper">
+                    <label for="passport">Скан пасспорта*</label>
+                    <input type="file" name="passport" id="passport" required>
+                </div>
+    
+                <div class="input-wrapper">
+                    <label for="flurogr">Флюрография</label>
+                    <input type="file" name="flurogr" id="flurogr">
+                </div>
+                <div class="submit-wrapper">
+                    <button type="submit" class="submit">Отправить</button>
+                    <p>* — Обязательные поля</p>
+                </div>
+            </form>
+            <div class="alert alert-info">
+                <h1>Порядок заселения</h1>
+                <ol>
+                    <li><b>С 21.08.2023 по 25.08.2023 гг.</b> в общежития заселяются студенты 1 курса.</li>
+                    <li><b>28.08.2023 г.</b> среди студентов старших курсов, отметивших (в срок до <b>30.06.2023г.</b>) галочку о нуждаемости в общежитии, на основе сформированного рейтинга формируется первая очередь заселения на оставшиеся свободные места в общежитиях. Каждому студенту, попавшему в первую волну заселения, необходимо в указанный срок заселиться в то общежитие, которое указано в разделе статуса заявки рейтинга заселения.</li>
+                    <li><b>До 01.09.2023 г. включително</b> данные студенты должны прийти в указанное общежитие и предоставить пакет документов для заселения <b>(паспорт, медицинская справка о прохождении флюорографии, действующая не более 1 года, 4 фотографии 3х4)</b> и заселиться. Если данные студенты не заселяются в срок <b>до 17:00 01.09.2023</b>, их место автоматически сгорает.</li>
+                    <li><b>04.09.2023</b> формируется вторая очередь заселения на оставшиеся свободные места в общежитиях. Каждому студенту, попавшему во вторую волну заселения, необходимо в указанный срок заселиться в то общежитие, которое указано в разделе статуса заявки рейтинга заселения.</li>
+                    <li><b>До 08.09.2023</b> включительно данные студенты должны прийти в указанное общежитие и предоставить пакет документов для заселения <b>(паспорт, медицинская справка о прохождении флюорографии, действующая не более 1 года, 4 фотографии 3х4)</b> и заселиться. Если данные студенты не заселяются в срок до <b>17:00 08.09.2023</b>, их место автоматически сгорает.</li>
+                    <li><b>С 11.09.2023</b> при наличии свободных мест заселение продолжается на оставшиеся свободные места. Процедура происходит в том же порядке, до полного заполнения мест в общежитиях.</li>
+                </ol>
+                <p>Ваша задача – в период с 15.08.2023 г. отслеживать актуальную информацию по рейтингу через Личный кабинет и быть готовым к заселению в общежитие! Заранее планируйте и позаботьтесь о своем прибытии в г. Иркутск (даты оформления билетов на поезд/самолет, необходимые вещи и др.), подготовьте пакет документов для заселения (паспорт, медицинская справка о прохождении флюорографии, действующая не более 1 года, 4 фотографии 3х4).</p>
+                <p>Все интересующие вопросы и актуальные новости, касающиеся системы рейтинга заселения в общежития, можно просмотреть:</p>
+                <ul>
+                <li><a href="https://vk.com/zaselenievirnitu">в группе Вконтакте</a></li>
+                <li>
+                    <p>задать вопрос по эл. почте <a href="mailto:zaselenievirnitu@gmail.com">zaselenievirnitu@gmail.com</a>, указав свои данные в следующем формате:</p>
+                    <ol>
+                        <li>Ваши ФИО</li>
+                        <li>Ваш Институт, группа</li>
+                        <li>Общежитие №</li>
+                        <li>Ваш вопрос</li>
+                    </ol>
+                </li>
+                <ul>
+                <p>В случае если Вы пропустили назначенные сроки заселения и статус заявки «Отказано», значит место в общежитии Вам не предоставлено.</p>
+                <p><b>Успехов!</b></p>
             </div>
-
-            <div class="input-wrapper">
-                <label for="age">Возраст:*</label>
-                <input type="number" name="age" placeholder="27" id="age" min="0" max="125" required>
-            </div>
-
-            <div class="input-wrapper">
-                <label for="facultet">Факультет*</label>
-                <input type="text" name="facultet" id="facultet" placeholder="ИСТб-22-1" required>
-            </div>
-
-            <div class="input-wrapper">
-                <label for="passport">Скан пасспорта*</label>
-                <input type="file" name="passport" id="passport" required>
-            </div>
-
-            <div class="input-wrapper">
-                <label for="flurogr">Флюрография</label>
-                <input type="file" name="flurogr" id="flurogr">
-            </div>
-            <div class="submit-wrapper">
-                <button type="submit" class="submit">Отправить</button>
-                <p>* — Обязательные поля</p>
-            </div>
-        </form>
+        </div>
     </main>
     <!-- FOOTER -->
     <footer>
