@@ -70,6 +70,9 @@ $( document ).ready( () => {
     $( 'input[name="radio"][value="2"]' ).on( 'click', e => { changeDefault( {'color1': '#545454', 'color2': '#A9CEF4', 'color4': '#A9CEF4', 'color5': '#545454', 'color6': '#4976FD', 'color7': '#A9CEF4', 'radius': '15'} ) } );
     $( 'input[name="radio"][value="3"]' ).on( 'click', e => { changeDefault( {'color1': '#545454', 'color2': '#6da6df', 'color4': '#6da6df', 'color5': '#545454', 'color6': '#1544d1', 'color7': '#6da6df', 'radius': '15'} ) } );
 
+    $( 'input[name="custom"][value="1"]' ).on( 'click', e => { $( '.right' ).addClass( 'none' ) } );
+    $( 'input[name="custom"][value="0"]' ).on( 'click', e => { $( '.right' ).removeClass( 'none' ) } );
+
     $( '#color1' ).on( 'input', (e) => { changeColor( {'css_var': '--bg-color', color: e.target.value } ) } );
     $( '#color2' ).on( 'input', (e) => { changeColor( {'css_var': '--bg2-color', color: e.target.value } ) } );
     $( '#color4' ).on( 'input', (e) => { changeColor( {'css_var': '--text-color', color: e.target.value } ) } );
