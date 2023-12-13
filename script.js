@@ -1,37 +1,42 @@
-initMap();
-async function initMap() {
-    // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
-    await ymaps3.ready;
-    $( '#map' ).css( 'height', '400px' );
-
-    const {YMap, YMapDefaultSchemeLayer} = ymaps3;
-
-    // Иницилиазируем карту
-    const map = new YMap(
-        // Передаём ссылку на HTMLElement контейнера
-        document.getElementById('map'),
-
-        // Передаём параметры инициализации карты
-        {
-            location: {
-                // Координаты центра карты
-                center: [52.262699, 104.261908],
-
-                // Уровень масштабирования
-                zoom: 1
-            }
-        }
-    );
-
-    // Добавляем слой для отображения схематической карты
-    map.addChild(new YMapDefaultSchemeLayer());
-}
 //<--temp
 function changeColor ( params ) 
 {
     $( 'body' ).css( params.css_var, params.color );
 }
 $( document ).ready( () => {
+
+    initMap();
+    async function initMap() {
+        // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
+        await ymaps3.ready;
+        $( '#map' ).css( 'height', '400px' );
+    
+        const {YMap, YMapDefaultSchemeLayer} = ymaps3;
+    
+        // Иницилиазируем карту
+        const map = new YMap(
+            // Передаём ссылку на HTMLElement контейнера
+            document.getElementById('map'),
+    
+            // Передаём параметры инициализации карты
+            {
+                location: {
+                    // Координаты центра карты
+                    center: [52.262699, 104.261908],
+    
+                    // Уровень масштабирования
+                    zoom: 10
+                }
+            }
+        );
+    
+        // Добавляем слой для отображения схематической карты
+        map.addChild(new YMapDefaultSchemeLayer());
+    }
+
+
+
+    
     function changeDefault ( params = {} )
     {
         if ( params == {} || params == true ) {
