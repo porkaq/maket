@@ -285,6 +285,9 @@ footer .footer-row {
     margin-block: var(--small-gap);
 }
 @media (max-width: 420px) {
+    .newslist-smallcard {
+        margin-inline: var(--small-gap);
+}
     .newslist-smallcard .news-item {
         min-width: 150px;
     }
