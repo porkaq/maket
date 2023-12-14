@@ -1,15 +1,15 @@
 @font-face {
 	font-family: 'opensans'; 
-    font-style: normal;
+    	font-style: normal;
 	font-weight: normal;
 	src: local('opensans')
         url(OpenSans-Regular.ttf); 
 }
 @font-face {
-	font-family: 'opensans-bold'; 
-    font-style: normal;
+	font-family: 'opensans'; 
+    	font-style: normal;
 	font-weight: bold;
-	src: local('opensans-bold')
+	src: local('opensans')
         url(OpenSans-Bold.ttf); 
 }
 .right label {
@@ -41,6 +41,7 @@
 }
 body {
     color: var(--text-color);
+    font-family: 'opensans'; 
     margin: 0;
     background-color: var(--bg-color);
 }
