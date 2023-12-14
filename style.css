@@ -1,16 +1,16 @@
 @font-face {
-	font-family: 'opensans'; 
+	font-family: 'IstokWeb'; 
     	font-style: normal;
 	font-weight: normal;
-	src: local('opensans')
-        url(OpenSans-Regular.ttf); 
+	src: local('IstokWeb')
+        url(IstokWeb-Regular.ttf); 
 }
 @font-face {
-	font-family: 'opensans'; 
+	font-family: 'IstokWeb'; 
     	font-style: normal;
 	font-weight: bold;
-	src: local('opensans')
-        url(OpenSans-Bold.ttf); 
+	src: local('IstokWeb')
+        url(IstokWeb-Bold.ttf); 
 }
 .right label {
     margin-right: 5px;
