@@ -2,13 +2,13 @@
 	font-family: 'Lora'; 
     	font-style: normal;
 	font-weight: normal;
-	src: local('Lora-Regular.ttf');
+	src: url('Lora-Regular.ttf');
 }
 @font-face {
 	font-family: 'Lora'; 
     	font-style: normal;
 	font-weight: bold;
-	src: local('Lora-Bold.ttf');
+	src: url('Lora-Bold.ttf');
 }
 .right label {
     margin-right: 5px;
