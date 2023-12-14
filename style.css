@@ -162,6 +162,7 @@ main h2 {
     flex-wrap: wrap;
     position: relative;
     margin-inline: var(--big-gap);
+	gap: var(--small-gap);
 }
 
 .newslist-smallcard .news-item {
