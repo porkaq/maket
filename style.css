@@ -184,7 +184,6 @@ main h2 {
     width: 22%;
     min-width: 350px;
     flex-grow: 1;
-    margin: 0 10px;
 }
 .newslist-smallcard .news-item-image {
     height: 250px;
