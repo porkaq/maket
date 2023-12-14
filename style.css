@@ -170,7 +170,7 @@ main h2 {
     min-width: 350px;
     position: relative;
     flex-grow: 1;
-    margin: 10px;
+    margin-block: var(--small-gap);
     display: flex;
     flex-direction: column;
     cursor: pointer;
