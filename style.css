@@ -298,9 +298,12 @@ footer .footer-row {
     margin-block: var(--small-gap);
 }
 .chat-widget {
-	position: absolue;
-	bottom: 25px;
-	right: 25px;
+	position: fixed;
+	bottom: 35px;
+	right: 35px;
+	width: 25px;
+	height: 25px;
+	background: green;
 	border-radius: 51%;
 	overflow: hidden;
 }
