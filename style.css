@@ -1,3 +1,17 @@
+@font-face {
+	font-family: 'opensans'; 
+    font-style: normal;
+	font-weight: normal;
+	src: local('opensans')
+        url(OpenSans-Regular.ttf); 
+}
+@font-face {
+	font-family: 'opensans-bold'; 
+    font-style: normal;
+	font-weight: bold;
+	src: local('opensans-bold')
+        url(OpenSans-Bold.ttf); 
+}
 .right label {
     margin-right: 5px;
 }
