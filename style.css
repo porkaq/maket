@@ -22,6 +22,7 @@
     --border-radius: 15px;
     --small-gap: 10px;
     --big-gap: 25px;
+    --box-shadow: 7px 7px 8px 0px rgba(34, 60, 80, 0.2);
     /* --bs-body-color: var(--text-color);  */
 }
 body {
@@ -162,6 +163,7 @@ main h2 {
     cursor: pointer;
     border-radius: var(--border-radius);
     overflow: hidden;
+    box-shadow: var(--box-shadow);
 }
 
 .newslist-smallcard .news-item-empty {
@@ -216,6 +218,7 @@ main h2 {
     max-height: 520px;
     border-radius: var(--border-radius);
     overflow: hidden;
+    box-shadow: var(--box-shadow);
 }
 .outside-activities article::after {
     position: absolute;;
