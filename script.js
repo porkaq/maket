@@ -80,5 +80,6 @@ $( document ).ready( () => {
     $( '#color6' ).on( 'input', (e) => { changeColor( {'css_var': '--active-text-color', color: e.target.value } ) } );
     $( '#color7' ).on( 'input', (e) => { changeColor( {'css_var': '--light-text-color', color: e.target.value } ) } );
     $( '#radius' ).on( 'input', (e) => { $( 'body' ).css( '--border-radius', e.target.value + 'px' ) } );
+    $( '#show-secret' ).on( 'click', () => { $('.center').removeClass('none'); } ); 
     //temp-->
 } );
