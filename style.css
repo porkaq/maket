@@ -299,6 +299,16 @@ footer .footer-row {
 .zaselenie .submit-wrapper {
     margin-block: var(--small-gap);
 }
+.chat-widget {
+	position: absolue;
+	bottom: 25px;
+	right: 25px;
+	border-radius: 51%;
+	overflow: hidden;
+}
+.chat-wrapper {
+	display: none;
+}
 @media (max-width: 420px) {
     .newslist-smallcard {
         margin-inline: var(--small-gap);
