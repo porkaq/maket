@@ -1,16 +1,16 @@
 @font-face {
-	font-family: 'IstokWeb'; 
+	font-family: 'Lora'; 
     	font-style: normal;
 	font-weight: normal;
-	src: local('IstokWeb')
-        url(IstokWeb-Regular.ttf); 
+	src: local('Lora')
+        url(Lora-Regular.ttf); 
 }
 @font-face {
-	font-family: 'IstokWeb'; 
+	font-family: 'Lora'; 
     	font-style: normal;
 	font-weight: bold;
-	src: local('IstokWeb')
-        url(IstokWeb-Bold.ttf); 
+	src: local('Lora')
+        url(Lora-Bold.ttf); 
 }
 .right label {
     margin-right: 5px;
