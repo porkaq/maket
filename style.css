@@ -46,6 +46,9 @@ a {
     color: var(--active-text-color);
     text-decoration: none;
 }
+.url {
+	cursor: pointer;
+}
 a:hover {
     color: var(--active-light-text-color);
     text-decoration: underline;
