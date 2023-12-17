@@ -322,6 +322,7 @@ footer .footer-row {
 }
 .chat-header {
 	display: flex;
+	align-items: baseline;
 	background-color: var(--bg2-color);
 	flex-grow: 1;
 	justify-content: space-between;
