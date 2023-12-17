@@ -323,6 +323,12 @@ footer .footer-row {
 .chat-input {
 	flex-grow: 1;
 }
+@media (max-width: 800px) {
+	.chat-wrapper {
+		width: 50%;
+		height: 60%;
+	}
+}
 @media (max-width: 420px) {
 	.outside-activities article {
 		height: 250px;
