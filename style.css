@@ -386,6 +386,7 @@ footer .footer-row {
 }
 .sms {
 	display: flex;
+	width: 90%;
 	gap: 10px;
 	font-size: 14px;
 	color: var(--darker-text-color);
