@@ -316,7 +316,7 @@ footer .footer-row {
 	background-color: var(--bg2-color);
 	flex-grow: 1;
 	justify-content: space-between;
-	padding-block: var(--small-gap);
+	padding-inline: var(--small-gap);
 	padding-top: var(--small-gap);
 }
 .chat-close {
