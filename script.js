@@ -35,7 +35,6 @@ $( document ).ready( () => {
     
         $( '.chat-widget' ).on({
         'click': () => {
-            console.log('asdasdas');
             $( '.chat-widget' ).toggleClass( 'none' );
             $( '.chat-wrapper' ).toggleClass( 'none' );
         }
