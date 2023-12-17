@@ -92,6 +92,7 @@ input:focus-visible {
 .head .right {
     display: flex;
     justify-content: right;
+	align-items: center;
     flex-grow: 1;
     flex-basis: 0;
 }
