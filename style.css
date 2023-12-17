@@ -34,6 +34,15 @@ body {
     margin: 0;
     background-color: var(--bg-color);
 }
+body.night {
+	--bg-color: #545454;
+    --bg2-color: #6da6df;
+    --text-color: #6da6df;
+    --darker-text-color: #545454;
+    --active-text-color: #1544d1;
+    --light-text-color: #6da6df;
+    --border-radius: 15px;
+}
 p {
     margin: 0;
 }
