@@ -34,7 +34,7 @@ $( document ).ready( () => {
             if ( params != undefined && params.url != undefined ) {
                 $e.on( 'click', (checked_el) => {
                     console.log(checked_el);
-                    window.location.href = $( checked_el ).data( 'params' ).url;
+                    window.location.href = $( checked_el.target ).data( 'params' ).url;
                 } )
             }
         } )
