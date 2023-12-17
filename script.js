@@ -25,25 +25,27 @@ async function initMap() {
     // Добавляем слой для отображения схематической карты
     map.addChild(new YMapDefaultSchemeLayer());
 }
-$( '.chat-widget' ).on({
-    'click': () => {
-        console.log('asdasdas);
-        $( '.chat-widget' ).toggleClass( 'none' );
-        $( '.chat-wrapper' ).toggleClass( 'none' );
-    }
-})
-$( '.chat-close' ).on({
-    'click': () => {
-        $( '.chat-wrapper' ).toggleClass( 'none' );
-        $( '.chat-widget' ).toggleClass( 'none' );
-    }
-})
 //<--temp
 function changeColor ( params ) 
 {
     $( 'body' ).css( params.css_var, params.color );
 }
 $( document ).ready( () => {
+    
+        $( '.chat-widget' ).on({
+        'click': () => {
+            console.log('asdasdas);
+            $( '.chat-widget' ).toggleClass( 'none' );
+            $( '.chat-wrapper' ).toggleClass( 'none' );
+        }
+    })
+    $( '.chat-close' ).on({
+        'click': () => {
+            $( '.chat-wrapper' ).toggleClass( 'none' );
+            $( '.chat-widget' ).toggleClass( 'none' );
+        }
+    })
+    
     function changeDefault ( params = {} )
     {
         if ( params == {} || params == true ) {
