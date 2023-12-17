@@ -1,4 +1,5 @@
 initMap();
+let defaultSchemeLayer;
 async function initMap() {
     // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
     await ymaps3.ready;
@@ -23,7 +24,7 @@ async function initMap() {
 
     $( '#map' ).css( 'height', '400px');
     // Добавляем слой для отображения схематической карты
-    var defaultSchemeLayer = new YMapDefaultSchemeLayer();
+    defaultSchemeLayer = new YMapDefaultSchemeLayer();
     map.addChild(defaultSchemeLayer);
 }
 $( document ).ready( () => {
