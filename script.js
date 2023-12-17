@@ -30,8 +30,8 @@ async function initMap() {
 $( document ).ready( () => {
         $( 'URL' ).each( (i, e) => {
             if ( e.data( 'params' ) != undefined && e.data( 'params' ).url != undefined ) {
-                e.on( 'click', (e) => {
-                    window.location.href = e.data( 'params' ).url;
+                e.on( 'click', (checked_el) => {
+                    window.location.href = checked_el.data( 'params' ).url;
                 } )
             }
         } )
