@@ -308,14 +308,16 @@ footer .footer-row {
 	width: 30%;
 	height: 50%;
 	background-color: var(--bg-color);
-	padding: var(--small-gap);
 	border-radius: var(--border-radius);
 	overflow: hidden;
 }
 .chat-header {
 	display: flex;
+	background-color: var(--bg2-color);
 	flex-grow: 1;
 	justify-content: space-between;
+	padding-block: var(--small-gap);
+	padding-top: var(--small-gap);
 }
 .chat-close {
 	height: 100%;
@@ -324,9 +326,17 @@ footer .footer-row {
 }
 .chat-body {
 	flex-grow: 10;
+	padding: var(--small-gap);
 }
 .chat-input {
 	flex-grow: 2;
+}
+.chat-input input {
+	padding: 5px;
+	background: transparent;
+	border: 3px solid var(--bg2-color);
+	border-radius: var(--border-radius);
+	margin: 0;
 }
 @media (max-width: 800px) {
 	.chat-wrapper {
