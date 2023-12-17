@@ -347,6 +347,7 @@ footer .footer-row {
 	border: 3px solid var(--bg2-color);
 	border-radius: var(--border-radius);
 	margin: 0;
+	resize: none;
 }
 @media (max-width: 800px) {
 	.chat-wrapper {
