@@ -306,6 +306,7 @@ footer .footer-row {
 	right: 35px;
 	width: 30%;
 	height: 50%;
+	background-color: var(--bg-color);
 }
 .chat-header {
 	display: flex;
@@ -325,6 +326,10 @@ footer .footer-row {
 @media (max-width: 420px) {
 	.outside-activities article {
 		height: 250px;
+	}
+	.chat-wrapper {
+		width: 60%;
+		height: 70%;
 	}
     .newslist-smallcard {
         margin-inline: var(--small-gap);
