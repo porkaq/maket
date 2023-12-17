@@ -109,7 +109,7 @@ input:focus-visible {
 	width: 100%;
 	height: 100%;
 }
-.color-scheme::after {
+.color-scheme:has(.color-scheme-input)::after {
 	position: absolute;
 	inset: 0;
 	background-repeat: no-repeat;
@@ -117,7 +117,7 @@ input:focus-visible {
 	background-size: contain;
 	background: url(sun.svg);
 }
-.color-scheme:checked::after {
+.color-scheme:has(.color-scheme-input:checked)::after {
 	background: url(moon.svg);
 }
 
