@@ -425,7 +425,7 @@ footer .footer-row {
 }
 @media (max-width: 420px) {
 	.color-scheme {
-		height: 95%;
+		height: 75%;
 	}
 	.outside-activities article {
 		height: 250px;
