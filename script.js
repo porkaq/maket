@@ -40,12 +40,14 @@ $( document ).ready( () => {
         } )
         $( '.chat-widget' ).on({
         'click': () => {
+            $( 'body' ).toggleClass( 'fixed' );
             $( '.chat-widget' ).toggleClass( 'none' );
             $( '.chat-wrapper' ).toggleClass( 'none' );
         }
     })
     $( '.chat-close' ).on({
         'click': () => {
+            $( 'body' ).toggleClass( 'fixed' );
             $( '.chat-wrapper' ).toggleClass( 'none' );
             $( '.chat-widget' ).toggleClass( 'none' );
         }
