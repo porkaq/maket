@@ -28,7 +28,13 @@ async function initMap() {
     map.addChild(defaultSchemeLayer);
 }
 $( document ).ready( () => {
-    
+        $( 'URL' ).each( (i, e) => {
+            if ( e.data( 'params' ) != undefined && e.data( 'params' ).url != undefined ) {
+                e.on( 'click', (e) => {
+                    window.location.href = e.data( 'params' ).url;
+                } )
+            }
+        } )
         $( '.chat-widget' ).on({
         'click': () => {
             $( '.chat-widget' ).toggleClass( 'none' );
