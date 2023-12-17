@@ -386,9 +386,6 @@ footer .footer-row {
 	resize: none;
 }
 @media (max-width: 800px) {
-	.head .left {
-		gap: var(--small-gap);
-	}
 	.color-scheme {
 		height: 80%;
 	}
