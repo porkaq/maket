@@ -300,7 +300,7 @@ footer .footer-row {
 	margin-inline: var(--big-gap); 
 	margin-bottom: var(--big-gap); 
 	margin-top: calc(80px + var(--big-gap));
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 }
 .zaselenie {
     display: flex;
@@ -387,6 +387,11 @@ footer .footer-row {
 	border-radius: var(--border-radius);
 	margin: 0;
 	resize: none;
+}
+@media (max-width: 1000px) {
+	.form-wrapper {
+		flex-wrap: wrap;
+	}
 }
 @media (max-width: 800px) {
 	.color-scheme {
