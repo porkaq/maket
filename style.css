@@ -387,7 +387,7 @@ footer .footer-row {
 .sms {
 	display: flex;
 	gap: 10px;
-	font-size: 12px;
+	font-size: 14px;
 	color: var(--darker-text-color);
 	background-color: var(--bg2-color);
 	border-radius: var(--border-radius);
@@ -433,6 +433,9 @@ footer .footer-row {
 	.chat-wrapper {
 		width: 80%;
 		height: 70%;
+	}
+	.sms {
+		font-size: 12px;
 	}
     .newslist-smallcard {
         margin-inline: var(--small-gap);
