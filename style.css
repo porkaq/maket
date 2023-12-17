@@ -339,7 +339,7 @@ footer .footer-row {
 .chat-input {
 	flex-grow: 2;
 }
-.chat-input input {
+.chat-input textarea {
 	padding: 5px;
 	background: transparent;
 	border: 3px solid var(--bg2-color);
