@@ -392,6 +392,7 @@ footer .footer-row {
 	background-color: var(--bg2-color);
 	border-radius: var(--border-radius);
 	border-radius: 15px;
+	padding: 5px;
 }
 .sms img {
 	height: 55px;
