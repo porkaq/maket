@@ -41,7 +41,7 @@ $( document ).ready( () => {
         }
     })
     $( 'color-scheme' ).on({
-        'change': () => {
+        'change': function(){
             console.log('s');
             $( 'body' ).toggleClass( 'night' );
         }
