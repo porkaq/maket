@@ -339,6 +339,7 @@ footer .footer-row {
 	right: 35px;
 	width: 55px;
 	height: 55px;
+	padding: 3px;
 	background: green;
 	border-radius: 51%;
 	overflow: hidden;
