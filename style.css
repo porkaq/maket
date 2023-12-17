@@ -2,11 +2,7 @@
 .right label {
     margin-right: 5px;
 }
-.right input {
-    margin-right: 20px;
-    max-height: 1em;
-    max-width: 2em;
-}
+
 .none {
     display: none !important;
 }
@@ -113,7 +109,7 @@ input:focus-visible {
 	content: "";
 	position: absolute;
 	inset: 0;
-	background-repeat: no-repeat;
+	background-repeat: no-repeat !important;
 	background-position: center;
 	background-size: contain;
 	background: url(sun.svg);
