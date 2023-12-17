@@ -298,7 +298,28 @@ footer .footer-row {
 	overflow: hidden;
 }
 .chat-wrapper {
-	display: none;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	bottom: 35px;
+	right: 35px;
+	width: 30%;
+	height: 50%;
+}
+.chat-header {
+	display: flex;
+	flex-grow: 1;
+	justify-content: space-between;
+}
+.close-chat {
+	height: 100%;
+	width: auto;
+}
+.chat-body {
+	flex-grow: 6;
+}
+.chat-input {
+	flex-grow: 1;
 }
 @media (max-width: 420px) {
     .newslist-smallcard {
