@@ -378,7 +378,13 @@ footer .footer-row {
 	padding: var(--small-gap);
 }
 .sms {
-	
+	display: flex;
+	gap: 10px;
+	font-size: 12px;
+}
+.sms img {
+	height: 55px;
+	width: 55px;
 }
 .chat-input {
 	flex-grow: 2;
