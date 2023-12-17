@@ -1,5 +1,3 @@
-initMap();
-
 async function initMap() {
     // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
     await ymaps3.ready;
@@ -27,6 +25,18 @@ async function initMap() {
     // Добавляем слой для отображения схематической карты
     map.addChild(new YMapDefaultSchemeLayer());
 }
+$( '.chat-widget' ).on({
+    'click': () => {
+        $( '.chat-widget' ).toggleClass( 'none' );
+        $( '.chat-wrapper' ).toggleClass( 'none' );
+    }
+})
+$( '.chat-close' ).on({
+    'click': () => {
+        $( '.chat-wrapper' ).toggleClass( 'none' );
+        $( '.chat-widget' ).toggleClass( 'none' );
+    }
+})
 //<--temp
 function changeColor ( params ) 
 {
