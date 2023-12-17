@@ -4,11 +4,6 @@ async function initMap() {
     await ymaps3.ready;
 
     const {YMap, YMapDefaultSchemeLayer} = ymaps3;
-    const defaultSchemeLayer = new YMapDefaultSchemeLayer({theme: 'dark'});
-    // add to map
-    map.addChild(defaultSchemeLayer);
-    // update
-    defaultSchemeLayer.update({theme: 'light'});
     // Иницилиазируем карту
     const map = new YMap(
         // Передаём ссылку на HTMLElement контейнера
@@ -29,6 +24,11 @@ async function initMap() {
     $( '#map' ).css( 'height', '400px');
     // Добавляем слой для отображения схематической карты
     map.addChild(new YMapDefaultSchemeLayer());
+    const defaultSchemeLayer = new YMapDefaultSchemeLayer({theme: 'dark'});
+    // add to map
+    map.addChild(defaultSchemeLayer);
+    // update
+    YMapDefaultSchemeLayer.update({theme: 'dark'});
 }
 //<--temp
 function changeColor ( params ) 
