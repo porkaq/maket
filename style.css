@@ -367,6 +367,7 @@ footer .footer-row {
 	padding-inline: var(--small-gap);
 	padding-top: var(--small-gap);
 	color: var(--darker-text-color);
+	font-size: 15px;
 }
 .chat-close {
 	height: 100%;
@@ -422,7 +423,7 @@ footer .footer-row {
 		height: 250px;
 	}
 	.chat-wrapper {
-		width: 60%;
+		width: 80%;
 		height: 70%;
 	}
     .newslist-smallcard {
