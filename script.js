@@ -40,7 +40,7 @@ $( document ).ready( () => {
             $( '.chat-widget' ).toggleClass( 'none' );
         }
     })
-    $( 'color-scheme' ).on({
+    $( '.color-scheme' ).on({
         'change': function(){
             console.log('s');
             $( 'body' ).toggleClass( 'night' );
