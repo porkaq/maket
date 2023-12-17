@@ -28,7 +28,7 @@ async function initMap() {
     map.addChild(defaultSchemeLayer);
 }
 $( document ).ready( () => {
-        $( 'URL' ).each( (i, e) => {
+        $( '.url' ).each( (i, e) => {
             if ( e.data( 'params' ) != undefined && e.data( 'params' ).url != undefined ) {
                 e.on( 'click', (checked_el) => {
                     window.location.href = checked_el.data( 'params' ).url;
