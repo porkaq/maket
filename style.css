@@ -98,12 +98,12 @@ input:focus-visible {
 }
 .color-scheme {
 	position: relative;
-	height: 100%;
+	height: 60%;
 	aspect-ratio: 1 / 1;
 }
 .color-scheme-input {
 	opacity: 0;
-	width: 60%;
+	width: 100%;
 	height: 100%;
 }
 .color-scheme::after {
@@ -389,7 +389,7 @@ footer .footer-row {
 	.head .left {
 		gap: var(--small-gap);
 	}
-	.color-scheme-input {
+	.color-scheme {
 		height: 80%;
 	}
 	.chat-wrapper {
@@ -398,7 +398,7 @@ footer .footer-row {
 	}
 }
 @media (max-width: 420px) {
-	.color-scheme-input {
+	.color-scheme {
 		height: 95%;
 	}
 	.outside-activities article {
