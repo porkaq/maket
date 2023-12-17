@@ -387,7 +387,9 @@ footer .footer-row {
 	display: flex;
 	gap: 10px;
 	font-size: 12px;
-	border-radius: var(--bg2-color);
+	color: var(--darker-text-color);
+	background-color: var(--bg2-color);
+	border-radius: var(--border-radius);
 	border-radius: 15px;
 }
 .sms img {
