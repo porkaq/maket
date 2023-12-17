@@ -318,7 +318,7 @@ footer .footer-row {
 	background-color: var(--bg-color);
 	border-radius: var(--border-radius);
 	overflow: hidden;
-	box-shadow: var(--box-shadow);
+	box-shadow: -4px 4px 8px 3px rgba(34, 60, 80, 0.2);
 }
 .chat-header {
 	display: flex;
