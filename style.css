@@ -219,7 +219,6 @@ main h2 {
     justify-content: center;
     max-width: 480px;
     max-height: 520px;
-	height: 250px;
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--box-shadow);
@@ -324,6 +323,9 @@ footer .footer-row {
 	flex-grow: 1;
 }
 @media (max-width: 420px) {
+	.outside-activities article {
+		height: 250px;
+	}
     .newslist-smallcard {
         margin-inline: var(--small-gap);
 }
