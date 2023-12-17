@@ -99,6 +99,23 @@ input:focus-visible {
     flex-grow: 1;
     flex-basis: 0;
 }
+.color-scheme {
+	position: relative;
+	visibility: hidden;
+	height: 100%;
+	aspect-ratio: 1 / 1;
+}
+.color-scheme:after {
+	position: absolute;
+	inset: 0;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	background: url(sun.svg);
+}
+.color-scheme:checked:after {
+	background: url(moon.svg);
+}
 
 main {
     margin-top: 80px;
