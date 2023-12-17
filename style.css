@@ -39,6 +39,11 @@ body.night {
     --light-text-color: #6da6df;
     --border-radius: 15px;
 }
+body.fixed {
+	margin: 0; 
+	height: 100%; 
+	overflow: hidden;
+}
 p {
     margin: 0;
 }
