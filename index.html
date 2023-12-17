@@ -12,15 +12,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="head">
-        <div class="left">
-            <a href="index.html" style="height: 100%"><img src="istu2.png" alt=""></a>
-            <a href="form.html">Заселение</a>
-            <a id="show-secret">какая то страница</a>
+    <header class="navbar navbar-expand-lg bg-body-tertiary head">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html">><img src="istu2.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a href="form.html">Заселение</a>
+            </li>
+            <li class="nav-item">
+              <div class="color-scheme"><input type="checkbox" class="color-scheme-input"></input></div>
+            </li>
+          </ul>
         </div>
-        <div class="right">
-            <div class="color-scheme"><input type="checkbox" class="color-scheme-input"></input></div>
-        </div>
+      </div>
     </header>
     <main>
         <a href="form.html">
