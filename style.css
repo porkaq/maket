@@ -105,7 +105,7 @@ input:focus-visible {
 	height: 100%;
 	aspect-ratio: 1 / 1;
 }
-.color-scheme:after {
+.color-scheme::after {
 	position: absolute;
 	inset: 0;
 	background-repeat: no-repeat;
@@ -113,7 +113,7 @@ input:focus-visible {
 	background-size: contain;
 	background: url(sun.svg);
 }
-.color-scheme:checked:after {
+.color-scheme:checked::after {
 	background: url(moon.svg);
 }
 
