@@ -103,7 +103,7 @@ input:focus-visible {
 }
 .color-scheme-input {
 	visibility: hidden;
-	width: 100%;
+	width: 60%;
 	height: 100%;
 }
 .color-scheme::after {
@@ -385,12 +385,18 @@ footer .footer-row {
 	resize: none;
 }
 @media (max-width: 800px) {
+	.color-scheme-input {
+		height: 80%;
+	}
 	.chat-wrapper {
 		width: 50%;
 		height: 60%;
 	}
 }
 @media (max-width: 420px) {
+	.color-scheme-input {
+		height: 95%;
+	}
 	.outside-activities article {
 		height: 250px;
 	}
