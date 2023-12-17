@@ -42,10 +42,15 @@ $( document ).ready( () => {
         }
     })
     $( '.color-scheme-input' ).on({
-        'change': function(){
-            console.log('s');
-            defaultSchemeLayer.update({theme: 'dark'});
-            $( 'body' ).toggleClass( 'night' );
+        'change': function(e){
+            if ( this.checked ) {
+                defaultSchemeLayer.update({theme: 'dark'});
+                $( 'body' ).addClass( 'night' );
+            } else {
+                defaultSchemeLayer.update({theme: 'light'});
+                $( 'body' ).removeClass( 'night' );
+            }
+            
         }
     })
 } );
