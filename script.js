@@ -26,11 +26,6 @@ async function initMap() {
     var defaultSchemeLayer = new YMapDefaultSchemeLayer({theme: 'dark'});
     map.addChild(defaultSchemeLayer);
 }
-
-function changeColor ( params ) 
-{
-    $( 'body' ).css( params.css_var, params.color );
-}
 $( document ).ready( () => {
     
         $( '.chat-widget' ).on({
@@ -46,8 +41,8 @@ $( document ).ready( () => {
         }
     })
     $( 'color-scheme' ).on({
-        'change' function () {
-            console.log(this);
+        'change': () => {
+            $( 'body' ).toggleClass( 'night' );
         }
     })
 } );
