@@ -340,6 +340,8 @@ footer .footer-row {
 	flex-grow: 2;
 }
 .chat-input textarea {
+	width: 100%;
+	height: 100%;
 	padding: 5px;
 	background: transparent;
 	border: 3px solid var(--bg2-color);
