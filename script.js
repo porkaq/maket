@@ -23,12 +23,8 @@ async function initMap() {
 
     $( '#map' ).css( 'height', '400px');
     // Добавляем слой для отображения схематической карты
-    map.addChild(new YMapDefaultSchemeLayer());
     const defaultSchemeLayer = new YMapDefaultSchemeLayer({theme: 'dark'});
-    // add to map
     map.addChild(defaultSchemeLayer);
-    // update
-    YMapDefaultSchemeLayer.update({theme: 'dark'});
 }
 //<--temp
 function changeColor ( params ) 
