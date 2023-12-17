@@ -262,6 +262,14 @@ footer .footer-row {
     flex-grow: 1;
     flex-basis: 0;
 }
+.form-wrapper {
+	display: flex;
+	gap: var(--big-gap); 
+	margin-inline: var(--big-gap); 
+	margin-bottom: var(--big-gap); 
+	margin-top: calc(80px + var(--big-gap));
+	flex-wrap: wrap;
+}
 .zaselenie {
     display: flex;
     flex-direction: column;
