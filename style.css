@@ -109,6 +109,7 @@ input:focus-visible {
 .color-scheme::after {
 	content: "";
 	position: absolute;
+	z-index: -1;
 	inset: 0;
 	background-repeat: no-repeat !important;
 	background-position: center;
