@@ -337,6 +337,8 @@ footer .footer-row {
 	background: green;
 	border-radius: 51%;
 	overflow: hidden;
+	background-repeat: no-repeat;
+	background: url(support.png);
 }
 .chat-wrapper {
 	position: fixed;
