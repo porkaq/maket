@@ -23,7 +23,7 @@ async function initMap() {
 
     $( '#map' ).css( 'height', '400px');
     // Добавляем слой для отображения схематической карты
-    var defaultSchemeLayer = new YMapDefaultSchemeLayer({theme: 'dark'});
+    var defaultSchemeLayer = new YMapDefaultSchemeLayer();
     map.addChild(defaultSchemeLayer);
 }
 $( document ).ready( () => {
@@ -40,9 +40,10 @@ $( document ).ready( () => {
             $( '.chat-widget' ).toggleClass( 'none' );
         }
     })
-    $( '.color-scheme' ).on({
+    $( '.color-scheme-input' ).on({
         'change': function(){
             console.log('s');
+            defaultSchemeLayer.update({theme: 'dark'});
             $( 'body' ).toggleClass( 'night' );
         }
     })
