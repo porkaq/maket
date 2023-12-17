@@ -30,7 +30,7 @@ async function initMap() {
 $( document ).ready( () => {
         $( '.url' ).each( (i, e) => {
             let $e = $( e );
-            let params = JSON.parse( $( e ).data( 'params' ) );
+            let params = JSON.parse( $( e ).data( 'params' ).replace( /\'/gm, '"' ) );
             if ( params != undefined && params.url != undefined ) {
                 $e.on( 'click', (checked_el) => {
                     console.log(checked_el);
