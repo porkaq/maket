@@ -425,6 +425,9 @@ footer .footer-row {
 	}
 }
 @media (max-width: 420px) {
+	.zaselenie .input-wrapper {
+		min-width: 200px;
+	}
 	.color-scheme {
 		height: 75%;
 	}
