@@ -311,6 +311,7 @@ footer .footer-row {
     display: flex;
     flex-direction: column;
     gap: var(--small-gap);
+	max-width: 100%;
 }
 .zaselenie .input-wrapper {
     max-width: 30%;
