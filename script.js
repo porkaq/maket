@@ -28,6 +28,7 @@ async function initMap() {
     map.addChild(defaultSchemeLayer);
 }
 $( document ).ready( () => {
+    $('.close-modal').on('click', () => {closeModal();})
         $( '.url' ).each( (i, e) => {
             let $e = $( e );
             let params = JSON.parse( $( e ).data( 'params' ).replace( /\'/gm, '"' ) );
@@ -65,3 +66,12 @@ $( document ).ready( () => {
         }
     })
 } );
+var openModal = function ()
+{
+    $('.modal').addClass('active');
+}
+var closeModal = function()
+{
+    $('.modal').removeClass('active');
+}
+
