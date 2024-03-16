@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $('.close-modal').on('click', () => {closeModal();})
     function handleFormSubmit ( e ) 
     {
         e.preventDefault();
@@ -22,3 +23,11 @@ $(document).ready(function () {
     } )
     $( '.zaselenie' )[0].addEventListener('submit', handleFormSubmit );
 });
+function openModal()
+{
+    $('.modal').css('display', 'block');
+}
+function closeModal()
+{
+    $('.modal').css('display', 'none');
+}
