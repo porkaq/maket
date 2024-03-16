@@ -23,11 +23,11 @@ $(document).ready(function () {
     } )
     $( '.zaselenie' )[0].addEventListener('submit', handleFormSubmit );
 });
-function openModal()
+var openModal = function ()
 {
     $('.modal').addClass('active');
 }
-function closeModal()
+var closeModal = function()
 {
     $('.modal').removeClass('active');
 }
