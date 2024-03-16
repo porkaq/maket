@@ -25,9 +25,9 @@ $(document).ready(function () {
 });
 function openModal()
 {
-    $('.modal').css('display', 'block');
+    $('.modal').addClass('active');
 }
 function closeModal()
 {
-    $('.modal').css('display', 'none');
+    $('.modal').removeClass('active');
 }
