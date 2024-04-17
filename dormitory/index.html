@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="profile"><img src="user.png" alt=""></div>
+        <div class="istu-logo"><img src="logo1.png" alt=""></div>
+    </header>
+    <div class="banner">
+        <img src="1.png" alt="">
+        <div class="banner-content">
+            <h1>Присоединяйтесь к нам<br>
+                Заселяйтесь в наше общежитие</h1>
+            <button class="form-on">Подать заявку!</button>
+        </div>
+    </div>
+    <main>
+        <h2>Информационный блок</h2>
+        <div class="news-wrapper">
+            <div class="news">
+                <img src="3.png" alt="">
+                <p>Политеховцы получили грантовую поддержку
+                    в рамках проекта «Авангард науки»</p>
+            </div>
+            <div class="news">
+                <img src="4.png" alt="">
+                <p>Политеховцы получили грантовую поддержку
+                    в рамках проекта «Авангард науки»</p>
+            </div>
+            <div class="news">
+                <img src="3.png" alt="">
+                <p>Политеховцы получили грантовую поддержку
+                    в рамках проекта «Авангард науки»</p>
+            </div>
+            <div class="news">
+                <img src="4.png" alt="">
+                <p>Политеховцы получили грантовую поддержку
+                    в рамках проекта «Авангард науки»</p>
+            </div>
+            <div class="news">
+                <img src="3.png" alt="">
+                <p>Политеховцы получили грантовую поддержку
+                    в рамках проекта «Авангард науки»</p>
+            </div>
+            <div class="news">
+                <img src="4.png" alt="">
+                <p>Политеховцы получили грантовую поддержку
+                    в рамках проекта «Авангард науки»</p>
+            </div>
+            <div class="news">
+                <img src="3.png" alt="">
+                <p>Политеховцы получили грантовую поддержку
+                    в рамках проекта «Авангард науки»</p>
+            </div>
+            <div class="news">
+                <img src="4.png" alt="">
+                <p>Политеховцы получили грантовую поддержку
+                    в рамках проекта «Авангард науки»</p>
+            </div>
+            <div class="news-empty"></div>
+        </div>
+        <div class="map-wrapper" id="map">
+
+        </div>
+    </main>
+    <footer>
+        <div class="left">
+            <h2>О нас:</h2>
+            <p>Заселение в общежитие Иркутский Национальный Исследовательский Технический университет</p>
+        </div>
+        <div class="center-right">
+            <h2>Контакты</h2>
+            <p>Телефон: +7(800) 53-53-53</p>
+            <p>E-mail: istu@ex.edu</p>
+        </div>
+        <div class="right">
+            <img class="chat-on" src="support.png" alt="">
+        </div>
+    </footer>
+    <div class="modal-outer none form">
+        <div class="modal-inner">
+            <div class="modal-header">
+                <div class="form-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" style="height: 90%">
+                      <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="modal-content">
+                <div class="line"></div>
+                <form action="">
+                    <h3>Личные данные</h3>
+                    <input type="text" placeholder="Номер снилса">
+                    <div class="line"></div>
+                    <h3>Паспортные данные</h3>
+                    <div class="input-row">
+                        <input type="text" placeholder="Фамилия">
+                        <input type="text" placeholder="Имя">
+                        <input type="text" placeholder="Отчество">
+                    </div>
+                    <input type="text" placeholder="Дата рождения">
+                    <input type="text" placeholder="Кем выдан паспорт">
+                    <div class="input-row">
+                        <input type="text" placeholder="Серия паспорта">
+                        <input type="text" placeholder="Номер паспорта">
+                    </div>
+                    <div class="input-row">
+                        <input type="text" placeholder="Дата выдачи">
+                        <input type="text" placeholder="Код подразделения">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal-outer none chat">
+        <div class="modal-inner">
+            <div class="modal-header">
+                <div class="chat-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" style="height: 90%">
+                      <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="modal-content">
+            <div class="chat-body">
+                <div class="sms">
+                    <img src="support.png">
+                    Здравствуйте, какой вопрос вас интересует?
+                </div>
+            </div>
+            <div class="chat-input">
+                <textarea autocomplete="off" placeholder="Опишите свой вопрос"></textarea>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        --padding-x: 4em;
+        --padding-y: 2em;
+        background-image: url(2.png);
+        background-repeat: repeat-y;
+        background-size: 100% auto;
+    }
+
+    body.fixed {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    .none {
+        display: none !important;
+    }
+
+    header {
+        display: flex;
+        gap: 1em;
+        flex-wrap: nowrap;
+        background-color: white;
+        padding: calc(var(--padding-y) / 2) calc(var(--padding-x) / 2);
+        max-height: 90px;
+    }
+
+    header .profile {
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+    }
+
+    header .istu-logo {
+        display: flex;
+        flex-grow: 1;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    header img {
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    .banner {
+        display: flex;
+        flex-wrap: wrap;
+        height: 60vh;
+        width: 100%;
+        margin-bottom: calc(var(--padding-y) * 2);
+    }
+
+    .banner>* {
+        width: 50%;
+        height: 100%;
+        min-width: 400px;
+    }
+
+    .banner img {
+        object-fit: cover;
+    }
+
+    .banner .banner-content {
+        height: 100%;
+        color: white;
+        font-size: clamp(.8em, 2vw, 1.5em);
+        background: linear-gradient(25deg, rgb(156 189 255), rgb(27, 88, 208));
+        padding: calc(var(--padding-x) / 2);
+        display: flex;
+        gap: 1em;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .banner .banner-content h1 {
+        font-size: 1.1em;
+        text-align: center;
+        margin-bottom: 1.5em;
+    }
+
+    .banner .banner-content button {
+        font-size: 1.3em;
+        padding: .5em 1em;
+        border: 1px solid white;
+        border-radius: 12px;
+    }
+
+    main {
+        background-color: rgba(250, 235, 215, 0.715);
+        margin: var(--padding-y) var(--padding-x);
+        padding: calc(var(--padding-y) / 2) calc(var(--padding-x) / 2);
+        color: black;
+    }
+
+    main>h2 {
+        font-size: clamp(1.2em, 3vw, 1.8em);
+        margin: 0.5em 0;
+        text-align: center;
+    }
+
+    .news-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 4em 2em;
+    }
+
+    .news-wrapper .news {
+        flex-grow: 1;
+        max-width: calc(50% - 2em);
+        min-width: 325px;
+    }
+
+    .news-wrapper .news img {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+    }
+
+    .news-wrapper .news p {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 0;
+        margin-top: 1em;
+        text-align: center;
+    }
+
+    .map-wrapper {
+        width: 100%;
+        height: 300px;
+    }
+
+    footer {
+        display: flex;
+        gap: 2.5em;
+        background-color: white;
+        padding: 2em 3em;
+        flex-wrap: wrap;
+    }
+
+    footer .left {
+        flex-grow: 4;
+        max-width: 65%;
+    }
+
+    footer .center-right {
+        flex-grow: 1;
+    }
+
+    footer .right {
+        flex-grow: 1;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+    }
+
+    footer h3 {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    .modal-outer {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.299);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-inner {
+        width: 60%;
+        /* height: 80%; */
+        background: linear-gradient(25deg, rgb(156 189 255), rgb(27, 88, 208));
+        border: 1px solid black;
+        border-radius: 50px;
+        padding: var(--padding-y) var(--padding-x);
+        color: black;
+    }
+    .chat .modal-inner {
+        padding: 0;
+    }
+
+    .modal-header {
+        height: 50px;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .line {
+        width: 100%;
+        height: 3px;
+        background-color: black;
+        border-radius: 5px;
+    }
+
+     form {
+        padding: 0;
+        margin: 0;
+    }
+
+    .form .modal-inner h3 {
+        font-size: 1.1em;
+    }
+
+    .form .modal-inner input {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+        border-radius: 10px;
+        font-size: 1em;
+        padding: .5em 1em;
+        width: 100%;
+        margin-bottom: 1.2em;
+    }
+
+    .form .modal-inner .input-row {
+        display: flex;
+        gap: 1.6em;
+    }
+
+    .form .modal-inner .input-row>* {
+        flex-grow: 1;
+        min-width: 90px;
+        flex-wrap: wrap;
+    }
+
+    .form .modal-inner label {
+        color: black;
+        margin-left: 1.5em;
+    }
+
+    .chat > .modal-inner {
+        z-index: 30;
+        display: flex;
+        flex-direction: column;
+        bottom: 35px;
+        right: 35px;
+        width: 30%;
+        height: 50%;
+        background-color: var(--bg-color);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: -4px 4px 8px 3px rgba(34, 60, 80, 0.2);
+    }
+
+    .chat-header {
+        display: flex;
+        align-items: baseline;
+        background-color: var(--bg2-color);
+        flex-grow: 1;
+        justify-content: space-between;
+        padding-inline: var(--small-gap);
+        padding-top: var(--small-gap);
+        color: var(--darker-text-color);
+        font-size: 15px;
+    }
+
+    .chat-close, .form-close {
+        height: 100%;
+        max-height: 40px;
+        width: auto;
+    }
+
+    .chat-body {
+        flex-grow: 10;
+        padding: var(--small-gap);
+    }
+
+    .sms {
+        display: flex;
+        width: 90%;
+        gap: 10px;
+        font-size: 14px;
+        color: var(--darker-text-color);
+        background-color: var(--bg2-color);
+        border-radius: var(--border-radius);
+        border-radius: 15px;
+        padding: 5px;
+    }
+
+    .sms img {
+        height: 55px;
+        width: 55px;
+    }
+
+    .chat-input {
+        flex-grow: 2;
+    }
+
+    .chat-input textarea {
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+        color: var(--darker-text-color);
+        background: transparent;
+        border: 3px solid var(--bg2-color);
+        border-radius: var(--border-radius);
+        margin: 0;
+        resize: none;
+    }
+
+    @media (max-width: 874px) {
+        .chat-wrapper {
+            width: 50%;
+            height: 60%;
+        }
+
+        .news-wrapper .news {
+            width: 100%;
+            max-width: 100%;
+            min-width: 100%;
+        }
+    }
+
+    @media (max-width: 800px) {
+        .banner > * {
+            max-height: 50%;
+            width: 100%;
+            min-width: unset;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .banner {
+            height: 80vw;
+        }
+
+        body {
+            --padding-x: 2em;
+            --padding-y: 1em;
+        }
+
+        header {
+            max-height: 65px;
+        }
+
+        .news-wrapper .news p {
+            font-size: 1em;
+        }
+
+        .chat-wrapper {
+            width: 80%;
+            height: 70%;
+        }
+
+        .sms {
+            font-size: 12px;
+        }
+    }
+</style>
+
+</html>
