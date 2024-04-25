@@ -1,4 +1,4 @@
-if (window.location.href == 'https://porkaq.github.io/maket/dormitory/index.html') initMap();
+initMap();
 let defaultSchemeLayer;
 async function initMap() {
     // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
