@@ -46,7 +46,7 @@ $( document ).ready( () => {
             let params = JSON.parse( $( e ).data( 'params' ).replace( /\'/gm, '"' ) );
             if ( params != undefined && params.url != undefined ) {
                 $e.on( 'click', () => {
-                    window.location.href = params.url;
+                    window.location.href = '/maket/dormitory' + params.url;
                 } )
             }
         } )
