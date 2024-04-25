@@ -1,4 +1,4 @@
-initMap();
+if (window.location.href == 'https://porkaq.github.io/maket/dormitory/index.html') initMap();
 let defaultSchemeLayer;
 async function initMap() {
     // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
@@ -45,7 +45,7 @@ $( document ).ready( () => {
             let $e = $( e );
             let params = JSON.parse( $( e ).data( 'params' ).replace( /\'/gm, '"' ) );
             if ( params != undefined && params.url != undefined ) {
-                $e.on( 'click', (checked_el) => {
+                $e.on( 'click', () => {
                     window.location.href = params.url;
                 } )
             }

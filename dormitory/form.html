@@ -28,7 +28,7 @@
                 <form action="">
                     <input type="text" placeholder="Номер снилса">
                     <input type="text" placeholder="Пароль">
-                    <button type="submit url" data-params="{'url': '\/index.html'}">Войти</button>
+                    <a type="" class="url" data-params="{'url': '\/index.html'}">Войти</a>
                 </form>
             </div>
         </div>
@@ -139,7 +139,7 @@
     .form-inner .right {
         width: 50%;
         height: 100%;
-        padding: 40px;
+        padding: 100px;
         background-color: #F0F0F0;
     }
     .form-inner .right h1 {
@@ -162,7 +162,9 @@
         padding: .5em 1em;
         width: 100%;
     }
-    .form-inner .right form button {
+    .form-inner .right form a {
+        display: inline-block;
+    text-align: center;
         background-color: #2FC6F7;
         padding: 1em 2em;
         width: 100%;
