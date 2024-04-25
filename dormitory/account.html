@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="profile url" data-params="{'url': '\/account.html'}"><img src="user.png" alt=""></div>
+        <div class="istu-logo url" data-params="{'url': '\/index.html'}"><img src="logo1.png" alt=""></div>
+    </header>
+    <main>
+        <div class="left">
+            <div class="nav active">Личный кабинет</div>
+            <div class="nav">Оповещение</div>
+            <div class="nav">Рейтинг</div>
+        </div>
+        <div class="right">
+            <h1>Личный кабинет</h1>
+            <div class="info-outer">
+                <div class="img-outer"><img src="avatar.png" alt=""></div>
+                <p class="fio">Фамилия Имя Отчество</p>
+                <div class="info-row">
+                    <div class="info-name">Почта:</div>
+                    <div class="info"></div>
+                </div>
+                <div class="info-row">
+                    <div class="info-name">.</div>
+                    <div class="info"></div>
+                </div>
+                <div class="info-row">
+                    <div class="info-name">.</div>
+                    <div class="info"></div>
+                </div>
+                <div class="status">
+                    <span>Статус заселения:</span>
+                    <button>На Рассмотрении</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="left">
+            <h2>О нас:</h2>
+            <p>Заселение в общежитие Иркутский Национальный Исследовательский Технический университет</p>
+        </div>
+        <div class="center-right">
+            <h2>Контакты</h2>
+            <p>Телефон: +7(800) 53-53-53</p>
+            <p>E-mail: istu@ex.edu</p>
+        </div>
+        <div class="right">
+            <img class="chat-on" src="support.png" alt="">
+        </div>
+    </footer>
+</body>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        --padding-x: 4em;
+        --padding-y: 2em;
+        display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    }
+    header {
+        display: flex;
+        gap: 1em;
+        flex-wrap: nowrap;
+        background-color: white;
+        padding: calc(var(--padding-y) / 2) calc(var(--padding-x) / 2);
+        max-height: 90px;
+        border-bottom: 3px solid black;
+    }
+
+    header .profile {
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+    }
+
+    header .istu-logo {
+        display: flex;
+        flex-grow: 1;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    header img {
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    main {
+        display: flex;
+    }
+    main .left {
+        background-color: #EEF2F4;
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        position: relative;
+        padding: 1.5em;
+    }
+    main .left::after {
+        position: absolute;
+        content: "";
+        width: 3px;
+        height: 70%;
+        top: 15%;
+        right: -1.5px;
+        background-color: black;
+    }
+    main .left .nav {
+        width: 100%;
+        padding: 0.5em 1em;
+    }
+    main .left .nav.active {
+        background-color: #AFB1B2;
+    }
+    main .right {
+        width: 80%;
+        height: 100%;
+        padding: 2em 3em 7em 3em;
+    }
+    main .right h1 {
+        text-align: center;
+        font-size: 2.5em;
+        margin-top: 0;
+        margin-bottom: 1em;
+        padding-bottom: 0.5em;
+        position: relative;
+    }
+    main .right h1::after {
+        position: absolute;
+        content: "";
+        height: 3px;
+        width: 90%;
+        left: 5%;
+        bottom: 0;
+        background-color: black;
+    }
+    .info-outer {
+        width: 100%;
+    }
+    .info-outer .img-outer {
+        float: left;
+        margin: 0 1em 1em 0;
+        width: 15%;
+        aspect-ratio: 1 / 1;
+    }
+    .info-outer .img-outer img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    .info-outer .fio {
+        font-size: 1.5em;
+    }
+    .info-outer .info-row {
+        display: flex;
+        gap: 1em;
+        margin-bottom: 2em;
+        max-width: 600px;
+    }
+    .info-outer .info-row .info-name {
+
+    }
+    .info-outer .info-row .info {
+        flex-grow: 1;
+        border-bottom: 2px solid black;
+    }
+    .status {
+        display: flex;
+        gap: 2em;
+    }
+    .status span {
+        font-size: 1.5em;
+    }
+    .status button {
+        padding: 1em 3em;
+        color: white;
+        border: none;
+        background-color: #8B8B8B;
+        border-radius: 10px;
+    }
+
+    footer {
+        display: flex;
+        gap: 2.5em;
+        background-color: white;
+        padding: 2em 3em;
+        flex-wrap: wrap;
+        margin-top: auto;
+    }
+
+    footer .left {
+        flex-grow: 4;
+        max-width: 65%;
+    }
+
+    footer .center-right {
+        flex-grow: 1;
+    }
+
+    footer .right {
+        flex-grow: 1;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+    }
+
+    footer h3 {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+</style>
+
+</html>
